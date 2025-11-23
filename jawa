@@ -1,13 +1,13 @@
 local LoadingScreen =loadstring(game:HttpGet("https://pastefy.app/wmC1DHTs/raw?part=addon.lua"))()
 
--- â€¦ Script de ativaÃ§Ã£o automÃ¡tica de eventos (Hub)
+-- Ã¢â‚¬Â¦ Script de ativaÃƒÂ§ÃƒÂ£o automÃƒÂ¡tica de eventos (Hub)
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RE = ReplicatedStorage:WaitForChild("RE")
 
 local NameTextEvent = RE:WaitForChild("1RPNam1eTex1t")
 local NameColorEvent = RE:WaitForChild("1RPNam1eColo1r")
 
--- FunÃ§Ã£o para disparar eventos com seguranÃ§a 
+-- FunÃƒÂ§ÃƒÂ£o para disparar eventos com seguranÃƒÂ§a 
 local function fireEvent(event, ...)
     if event then
         event:FireServer(...)
@@ -17,10 +17,10 @@ local function fireEvent(event, ...)
 end
 
 -- Nome de RolePlay
-fireEvent(NameTextEvent, "RolePlayName", "D4nz Hub")
+fireEvent(NameTextEvent, "RolePlayNama", "D4nz Hub")
 
 -- Cor do Nome (preto)
-fireEvent(NameColorEvent, "PickingRPNameColor", Color3.new(255, 90, 90))
+fireEvent(NameColorEvent, "PickingRPNamaColor", Color3.new(255, 90, 90))
 
 -- Bio de RolePlay
 fireEvent(NameTextEvent, "RolePlayBio", "Made by aldan")
@@ -50,24 +50,24 @@ local MinimizeBtn = Window:AddMinimizeButton({
 
 
 
-local Tab1 = Window:MakeTab({"Credits ", "info"})
-local Tab2= Window:MakeTab({"Functions ", "fun"})
+local Tab1 = Window:MakeTab({"Kredit ", "informasi"})
+local Tab2= Window:MakeTab({"Fungsi ", "fun"})
 local Tab3 = Window:MakeTab({"Avatar", "shirt"})
-local Tab4 = Window:MakeTab({"House", "Home"})
-local Tab5 = Window:MakeTab({"Car", "Car"})
-local Tab6 = Window:MakeTab({"Protections ", "shieldcheck"})
-local Tab7 = Window:MakeTab({"Music All", "radio"})    
-local Tab8 = Window:MakeTab({"Music", "music4"}) 
+local Tab4 = Window:MakeTab({"Rumah", "Home"})
+local Tab5 = Window:MakeTab({"Mobil", "Mobil"})
+local Tab6 = Window:MakeTab({"Perlindungan ", "shieldcheck"})
+local Tab7 = Window:MakeTab({"Musik All", "radio"})    
+local Tab8 = Window:MakeTab({"Musik", "music4"}) 
 local Tab9 = Window:MakeTab({"Troll", "skull"}) 
-local Tab10 = Window:MakeTab({"Attack Server", "bomb"})
-local Tab11 = Window:MakeTab({"Scripts", "terminal"})
-local Tab12 = Window:MakeTab({"Teleportes", "map-pin"})
+local Tab10 = Window:MakeTab({"Serang Server", "bomb"})
+local Tab11 = Window:MakeTab({"Script", "terminal"})
+local Tab12 = Window:MakeTab({"Teleport", "map-pin"})
 local Tab13 = Window:MakeTab({"RGB", "brush"})
 
 --------------------------------------------------------------------------------------------------------------------------------
                                                    -- === Tab 1: credits === --
 ---------------------------------------------------------------------------------------------------------------------------------
-Tab1:AddSection({"Credits "})
+Tab1:AddSection({"Kredit "})
 
 Tab1:AddDiscordInvite({
     Name = "Aldan Tiktok ",
@@ -105,7 +105,7 @@ local Paragraph = Tab1:AddParagraph({"Criadores", "silvadev."})
 local Paragraph = Tab1:AddParagraph({"Parceiros", " auralynx hub"})
 
   Tab1:AddButton({
-    Name = "â€¢ Copiar nosso Youtube",
+    Name = "Ã¢â‚¬Â¢ Copiar nosso Youtube",
     Description = "Copia o link junto com o @",
     Callback = function()
       setclipboard("@") -- Copia o @
@@ -114,10 +114,10 @@ local Paragraph = Tab1:AddParagraph({"Parceiros", " auralynx hub"})
     end
   })
   
-Tab2:AddSection({ "Rejoin" })
+Tab2:AddSection({ "Gabung ulang" })
 
 Tab2:AddButton({
-    Name = "Rejoin",
+    Name = "Gabung ulang",
     Callback = function()
         local TeleportService = game:GetService("TeleportService")
         TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, game.Players.LocalPlayer)
@@ -142,13 +142,13 @@ local function headsitOnPlayer(targetPlayer)
     local humanoid = character:FindFirstChildOfClass("Humanoid")
 
     if not targetPlayer.Character or not targetPlayer.Character:FindFirstChild("Head") then
-        warn("Jogador alvo sem cabeÃ§a ou personagem.")
+        warn("Jogador alvo sem cabeÃƒÂ§a ou personagem.")
         return false
     end
     local targetHead = targetPlayer.Character.Head
     local localRoot = character:FindFirstChild("HumanoidRootPart")
     if not localRoot then
-        warn("Seu personagem nÃ£o tem HumanoidRootPart.")
+        warn("Seu personagem nÃƒÂ£o tem HumanoidRootPart.")
         return false
     end
 
@@ -191,7 +191,7 @@ local function removeHeadsit()
     print("Headsit desativado.")
 end
 
--- FunÃ§Ã£o para encontrar jogador por nome parcial
+-- FunÃƒÂ§ÃƒÂ£o para encontrar jogador por nome parcial
 local function findPlayerByPartialName(partial)
     partial = partial:lower()
     for _, player in pairs(Players:GetPlayers()) do
@@ -202,7 +202,7 @@ local function findPlayerByPartialName(partial)
     return nil
 end
 
--- NotificaÃ§Ã£o com imagem do jogador
+-- NotificaÃƒÂ§ÃƒÂ£o com imagem do jogador
 local function notifyPlayerSelected(player)
     local StarterGui = game:GetService("StarterGui")
     local thumbType = Enum.ThumbnailType.HeadShot
@@ -220,8 +220,8 @@ end
 -- TextBox para digitar nome do player
 Tab2:AddTextBox({
     Name = "Nome do Jogador",
-    Description = "Digite parte do nome",
-    PlaceholderText = "ex: Name123",
+    Description = "Ketik parte do nome",
+    PlaceholderText = "ex: Nama123",
     Callback = function(Value)
         local foundPlayer = findPlayerByPartialName(Value)
         if foundPlayer then
@@ -233,8 +233,8 @@ Tab2:AddTextBox({
     end
 })
 
--- BotÃ£o para ativar/desativar headsit
--- BotÃ£o para ativar/desativar headsit (versÃ£o simplificada)
+-- BotÃƒÂ£o para ativar/desativar headsit
+-- BotÃƒÂ£o para ativar/desativar headsit (versÃƒÂ£o simplificada)
 Tab2:AddButton({"Ativar/desativar headsit", function()
     if not selectedPlayerName then
     
@@ -312,26 +312,26 @@ Tab2:AddSlider({
  end)
 
  Tab2:AddButton({
-    Name = "Reset Speed/Gravity/Jumppower.âœ…",
+    Name = "Reset Speed/Gravity/Jumppower.Ã¢Å“â€¦",
     Callback = function()
         -- Resetar Speed
         local player = game.Players.LocalPlayer
         local character = player.Character or player.CharacterAdded:Wait()
         local humanoid = character:FindFirstChildOfClass("Humanoid")
         if humanoid then
-            humanoid.WalkSpeed = 16 -- Valor padrÃ£o do Speed
-            humanoid.JumpPower = 50 -- Valor padrÃ£o do JumpPower
+            humanoid.WalkSpeed = 16 -- Valor padrÃƒÂ£o do Speed
+            humanoid.JumpPower = 50 -- Valor padrÃƒÂ£o do JumpPower
         end
         
         -- Resetar Gravity
-        game.Workspace.Gravity = 196.2 -- Valor padrÃ£o da gravidade
+        game.Workspace.Gravity = 196.2 -- Valor padrÃƒÂ£o da gravidade
         
         -- Desativar Infinite Jump
         InfiniteJumpEnabled = false
     end
 })
  
- local Section = Tab2:AddSection({"FunÃ§Ãµes normais"})
+ local Section = Tab2:AddSection({"FunÃƒÂ§ÃƒÂµes normais"})
 
  Tab2:AddToggle({
     Name = "Infinite Jump",
@@ -352,7 +352,7 @@ local RunService = game:GetService("RunService")
 local Workspace = game:GetService("Workspace")
 local LocalPlayer = Players.LocalPlayer
 
--- FunÃ§Ã£o para controle de colisÃµes do jogador
+-- FunÃƒÂ§ÃƒÂ£o para controle de colisÃƒÂµes do jogador
 local function managePlayerCollisions(character)
     if not character then return end
     
@@ -430,7 +430,7 @@ local function mainLoop()
     end)
 end
 
--- ConfiguraÃ§Ã£o do toggle
+-- ConfiguraÃƒÂ§ÃƒÂ£o do toggle
 local NoclipToggle = Tab6:AddToggle({
     Name = "Ultimate Noclip",
     Description = "Noclip + Controle de bolas integrado",
@@ -456,7 +456,7 @@ NoclipToggle:Callback(function(state)
             conn:Disconnect()
         end
         
-        -- Restaura colisÃµes
+        -- Restaura colisÃƒÂµes
         if LocalPlayer.Character then
             managePlayerCollisions(LocalPlayer.Character)
         end
@@ -534,20 +534,20 @@ Tab6:AddToggle({
     end
 })
 
--- ServiÃ§os
+-- ServiÃƒÂ§os
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 
--- VariÃ¡veis
+-- VariÃƒÂ¡veis
 local billboardGuis = {}
 local connections = {}
 local espEnabled = false
 local selectedColor = "RGB Suave"
 
--- BotÃ£o para Fly GUI
+-- BotÃƒÂ£o para Fly GUI
 Tab2:AddButton({
     Name = "Ativar Fly GUI",
-    Description = "Carrega um GUI de fly universal",
+    Description = "Mobilrega um GUI de fly universal",
     Callback = function()
         local success, _ = pcall(function()
             loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Fly-gui-v3-30439"))()
@@ -565,7 +565,7 @@ Tab2:AddButton({
                                                          -- Tab3:  Avatar Editor--
 ----------------------------------------------------------------------------------------------------------------------------------
 
-local Section = Tab3:AddSection({"Copy Avatar"})
+local Section = Tab3:AddSection({"Salin Avatar"})
 
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
@@ -586,7 +586,7 @@ local function GetPlayerNames()
 end
 
 local Dropdown = Tab3:AddDropdown({
-    Name = "Players List",
+    Name = "Daftar Pemain",
     Description = "",
     Options = GetPlayerNames(),
     Default = "",
@@ -603,7 +603,7 @@ end
 
 UptadePlayers()
 
-Tab3:AddButton({"Atualizar lista", function()
+Tab3:AddButton({"Perbarui lista", function()
     UptadePlayers()
 end})
 
@@ -611,7 +611,7 @@ Players.PlayerAdded:Connect(UptadePlayers)
 Players.PlayerRemoving:Connect(UptadePlayers)
 
 Tab3:AddButton({
-    Name = "Copy Avatar",
+    Name = "Salin Avatar",
     Callback = function()
         if not Target then return end
 
@@ -627,7 +627,7 @@ Tab3:AddButton({
                 -- RESETAR LOCALPLAYER
                 local LDesc = LHumanoid:GetAppliedDescription()
 
-                -- Remover acessÃ³rios, roupas e face atuais
+                -- Remover acessÃƒÂ³rios, roupas e face atuais
                 for _, acc in ipairs(LDesc:GetAccessories(true)) do
                     if acc.AssetId and tonumber(acc.AssetId) then
                         Remotes.Wear:InvokeServer(tonumber(acc.AssetId))
@@ -702,16 +702,16 @@ Tab3:AddButton({
                 -- Nome, bio e cor
                 local Bag = TPlayer:FindFirstChild("PlayersBag")
                 if Bag then
-                    if Bag:FindFirstChild("RPName") and Bag.RPName.Value ~= "" then
-                        Remotes.RPNameText:FireServer("RolePlayName", Bag.RPName.Value)
+                    if Bag:FindFirstChild("RPNama") and Bag.RPName.Value ~= "" then
+                        Remotes.RPNameText:FireServer("RolePlayNama", Bag.RPName.Value)
                         task.wait(0.3)
                     end
                     if Bag:FindFirstChild("RPBio") and Bag.RPBio.Value ~= "" then
                         Remotes.RPNameText:FireServer("RolePlayBio", Bag.RPBio.Value)
                         task.wait(0.3)
                     end
-                    if Bag:FindFirstChild("RPNameColor") then
-                        Remotes.RPNameColor:FireServer("PickingRPNameColor", Bag.RPNameColor.Value)
+                    if Bag:FindFirstChild("RPNamaColor") then
+                        Remotes.RPNameColor:FireServer("PickingRPNamaColor", Bag.RPNameColor.Value)
                         task.wait(0.3)
                     end
                     if Bag:FindFirstChild("RPBioColor") then
@@ -734,7 +734,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local AvatarManager = {}
 AvatarManager.ReplicatedStorage = ReplicatedStorage
 
--- FunÃ§Ã£o para exibir notificaÃ§Ã£o
+-- FunÃƒÂ§ÃƒÂ£o para exibir notificaÃƒÂ§ÃƒÂ£o
 function AvatarManager:MostrarNotificacao(mensagem)
     pcall(function()
         game:GetService("StarterGui"):SetCore("SendNotification", {
@@ -756,14 +756,14 @@ AvatarManager.Avatares = {
     { Nome = "Pou idoso", ID = 15742966010  },
     { Nome = "Coco/boxt@", ID = 77013984520332  },
     { Nome = "Coelho", ID = 71797333686800  },
-    { Nome = "HipopÃ³tamo", ID = 73215892129281 },
+    { Nome = "HipopÃƒÂ³tamo", ID = 73215892129281 },
     { Nome = "Ratatui", ID = 108557570415453 },
     { Nome = "Galinha", ID = 71251793812515 },
     { Nome = "Pepa pig", ID = 92979204778377 },
     { Nome = "pinguin", ID = 94944293759578 },
     { Nome = "Sid", ID = 87442757321244 },
     { Nome = "puga grande", ID = 111436158728716 },
-    { Nome = "SHREK AMALDIÃ‡OADO", ID = 120960401202173 },
+    { Nome = "SHREK AMALDIÃƒâ€¡OADO", ID = 120960401202173 },
     { Nome = "mosquito grande", ID = 108052868536435 },
     { Nome = "Noob Invertido", ID = 106596990206151 },
     { Nome = "Pato(a)", ID = 135132836238349 },
@@ -775,7 +775,7 @@ AvatarManager.Avatares = {
     { Nome = "Simon azul", ID = 76155710249925 }
 }
 
--- FunÃ§Ã£o para obter os nomes dos avatares para o dropdown
+-- FunÃƒÂ§ÃƒÂ£o para obter os nomes dos avatares para o dropdown
 function AvatarManager:GetAvatarNames()
     local nomes = {}
     for _, avatar in ipairs(self.Avatares) do
@@ -784,7 +784,7 @@ function AvatarManager:GetAvatarNames()
     return nomes
 end
 
--- FunÃ§Ã£o para equipar o avatar
+-- FunÃƒÂ§ÃƒÂ£o para equipar o avatar
 function AvatarManager:EquiparAvatar(avatarName)
     for _, avatar in ipairs(self.Avatares) do
         if avatar.Nome == avatarName then
@@ -795,19 +795,19 @@ function AvatarManager:EquiparAvatar(avatarName)
             if success then
                 self:MostrarNotificacao("Avatar " .. avatarName .. " equipado com sucesso!")
             else
-                self:MostrarNotificacao("Falha ao equipar o avatar " .. avatarName .. "!")
+                self:MostrarNotificacao("Falha ao pakai o avatar " .. avatarName .. "!")
             end
             return
         end
     end
-    self:MostrarNotificacao("Avatar " .. avatarName .. " nÃ£o encontrado!")
+    self:MostrarNotificacao("Avatar " .. avatarName .. " nÃƒÂ£o encontrado!")
 end
 
--- Tab3: OpÃ§Ã£o de Avatar
+-- Tab3: OpÃƒÂ§ÃƒÂ£o de Avatar
 -- Dropdown para avatares
 local AvatarDropdown = Tab3:AddDropdown({
     Name = "assesorios 3D",
-    Description = "Selecione  para equipar",
+    Description = "Selecione  para pakai",
     Default = nil,
     Options = AvatarManager:GetAvatarNames(),
     Callback = function(avatarSelecionado)
@@ -815,9 +815,9 @@ local AvatarDropdown = Tab3:AddDropdown({
     end
 })
 
--- BotÃ£o para equipar avatar
+-- BotÃƒÂ£o para equipar avatar
 Tab3:AddButton({
-    Name = "equipar ",
+    Name = "pakai ",
     Description = "Equipar selecionado",
     Callback = function()
         if not _G.SelectedAvatar or _G.SelectedAvatar == "" then
@@ -830,9 +830,9 @@ Tab3:AddButton({
 
 -------------------------------------------------------------------------------------------------------------------------
 local Section = Tab3:AddSection({"Avatar Editor"})
--- BotÃ£o para equipar partes do corpo
+-- BotÃƒÂ£o para equipar partes do corpo
 
--- Cria um botÃ£o para equipar todas as partes do corpo
+-- Cria um botÃƒÂ£o para equipar todas as partes do corpo
 Tab3:AddButton({
     Name = "Macaco",
     Callback = function()
@@ -840,10 +840,10 @@ Tab3:AddButton({
             {
                 79397492843080, -- Perna Direita
                 128106725992124,  -- Perna Esquerda
-                129643681805465,  -- BraÃ§o Direito
-                121845409370294,  -- BraÃ§o Esquerdo
+                129643681805465,  -- BraÃƒÂ§o Direito
+                121845409370294,  -- BraÃƒÂ§o Esquerdo
                 124374125166137, -- Torso
-                133717899283546   -- CabeÃ§a
+                133717899283546   -- CabeÃƒÂ§a
             }
         }
         game:GetService("ReplicatedStorage")
@@ -863,10 +863,10 @@ Tab3:AddButton({
             {
                 124355047456535, -- Perna Direita
                 120507500641962,  -- Perna Esquerda
-                82273782655463,  -- BraÃ§o Direito
-                113625313757230,  -- BraÃ§o Esquerdo
+                82273782655463,  -- BraÃƒÂ§o Direito
+                113625313757230,  -- BraÃƒÂ§o Esquerdo
                 109182039511426, -- Torso
-                0   -- CabeÃ§a
+                0   -- CabeÃƒÂ§a
             }
         }
         game:GetService("ReplicatedStorage")
@@ -886,10 +886,10 @@ Tab3:AddButton({
             {
                 98454038846291, -- Perna Direita
                 93110795723782,  -- Perna Esquerda
-                131681603005543,  -- BraÃ§o Direito
-                107032747230578,  -- BraÃ§o Esquerdo
+                131681603005543,  -- BraÃƒÂ§o Direito
+                107032747230578,  -- BraÃƒÂ§o Esquerdo
                 129341990941517, -- Torso
-                109137349673343   -- CabeÃ§a
+                109137349673343   -- CabeÃƒÂ§a
             }
         }
         game:GetService("ReplicatedStorage")
@@ -909,7 +909,7 @@ Tab3:AddButton({
             {
                 107431241133468, -- perna Direita
                 103380121023771, --Perna Esquerda
-                76079756909323, -- BraÃ§o-Direito
+                76079756909323, -- BraÃƒÂ§o-Direito
                 82598238110471, --Bra-o Esquerdo
                 112722466960512, --Torso
                 93369435761093 -- Head
@@ -958,7 +958,7 @@ Tab3:AddButton({
                 76780277149069, -- Bra-o-Direito
                 114025246656510, -- Bra-o-esquerdo
                 76928754971570, -- Torso
-                0   -- CabeÃ§a
+                0   -- CabeÃƒÂ§a
             }
         }
         game:GetService("ReplicatedStorage")
@@ -974,16 +974,16 @@ Tab3:AddButton({
 ---------------------------------------------------------------------------------------------------------------------------------
 
 Tab4:AddParagraph({
-    Title = "FunÃ§Ãµes para casas",
+    Title = "FunÃƒÂ§ÃƒÂµes para casas",
     Content = ""
 })
 
--- VariÃ¡veis globais
+-- VariÃƒÂ¡veis globais
 local isUnbanActive = false
 local SelectHouse = nil
 local NoclipDoor = nil
 
--- FunÃ§Ã£o para obter lista de casas
+-- FunÃƒÂ§ÃƒÂ£o para obter lista de casas
 local function getHouseList()
     local Tabela = {}
     local lots = workspace:FindFirstChild("001_Lots")
@@ -1000,7 +1000,7 @@ end
 -- Dropdown para selecionar casas
 pcall(function()
     Tab4:AddDropdown({
-        Name = "Selecione a Casa",
+        Name = "Selecione a Rumah",
         Options = getHouseList(),
         Default = "...",
         Callback = function(Value)
@@ -1008,19 +1008,19 @@ pcall(function()
             if NoclipDoor then
                 NoclipDoor:Set(false)
             end
-            print("Casa selecionada: " .. tostring(Value))
+            print("Rumah selecionada: " .. tostring(Value))
         end
     })
 end)
 
--- FunÃ§Ã£o para atualizar a lista de casas
+-- FunÃƒÂ§ÃƒÂ£o para atualizar a lista de casas
 local function DropdownHouseUpdate()
     local Tabela = getHouseList()
-    print("DropdownHouseUpdate called. Houses found:", #Tabela)
+    print("DropdownRumahUpdate called. Rumahs found:", #Tabela)
     pcall(function()
-        Tab4:ClearDropdown("Selecione a Casa") -- Tentar limpar dropdown, se suportado
+        Tab4:ClearDropdown("Selecione a Rumah") -- Tentar limpar dropdown, se suportado
         Tab4:AddDropdown({
-            Name = "Selecione a Casa",
+            Name = "Selecione a Rumah",
             Options = Tabela,
             Default = "...",
             Callback = function(Value)
@@ -1036,47 +1036,47 @@ end
 -- Inicializar dropdown
 pcall(DropdownHouseUpdate)
 
--- BotÃ£o para atualizar lista de casas
+-- BotÃƒÂ£o para atualizar lista de casas
 pcall(function()
     Tab4:AddButton({
-        Name = "Atualizar Lista de Casas",
+        Name = "Perbarui Lista de Rumahs",
         Callback = function()
-            print("Atualizar Lista de Casas button clicked.")
+            print("Perbarui Lista de Rumahs button clicked.")
             pcall(DropdownHouseUpdate)
         end
     })
 end)
 
--- BotÃ£o para teleportar para casa
+-- BotÃƒÂ£o para teleportar para casa
 pcall(function()
     Tab4:AddButton({
-        Name = "Teleportar para Casa",
+        Name = "Teleportar para Rumah",
         Callback = function()
             local House = workspace["001_Lots"]:FindFirstChild(tostring(SelectHouse))
             if House and game.Players.LocalPlayer.Character then
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(House.WorldPivot.Position)
             else
-                print("Casa nÃ£o encontrada: " .. tostring(SelectHouse))
+                print("Rumah nÃƒÂ£o encontrada: " .. tostring(SelectHouse))
             end
         end
     })
 end)
 
--- BotÃ£o para teleportar para cofre
+-- BotÃƒÂ£o para teleportar para cofre
 pcall(function()
     Tab4:AddButton({
         Name = "Teleportar para Cofre",
         Callback = function()
             local House = workspace["001_Lots"]:FindFirstChild(tostring(SelectHouse))
-            if House and House:FindFirstChild("HousePickedByPlayer") and game.Players.LocalPlayer.Character then
+            if House and House:FindFirstChild("RumahPickedByPlayer") and game.Players.LocalPlayer.Character then
                 local safe = House.HousePickedByPlayer.HouseModel:FindFirstChild("001_Safe")
                 if safe then
                     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(safe.WorldPivot.Position)
                 else
-                    print("Cofre nÃ£o encontrado na casa: " .. tostring(SelectHouse))
+                    print("Cofre nÃƒÂ£o encontrado na casa: " .. tostring(SelectHouse))
                 end
             else
-                print("Casa nÃ£o encontrada: " .. tostring(SelectHouse))
+                print("Rumah nÃƒÂ£o encontrada: " .. tostring(SelectHouse))
             end
         end
     })
@@ -1085,16 +1085,16 @@ end)
 -- Toggle para atravessar porta
 pcall(function()
     NoclipDoor = Tab4:AddToggle({
-        Name = "Atravessar Porta da Casa",
+        Name = "Atravessar Porta da Rumah",
         Description = "",
         Default = false,
         Callback = function(Value)
             pcall(function()
                 local House = workspace["001_Lots"]:FindFirstChild(tostring(SelectHouse))
-                if House and House:FindFirstChild("HousePickedByPlayer") then
+                if House and House:FindFirstChild("RumahPickedByPlayer") then
                     local housepickedbyplayer = House.HousePickedByPlayer
-                    local doors = housepickedbyplayer.HouseModel:FindFirstChild("001_HouseDoors")
-                    if doors and doors:FindFirstChild("HouseDoorFront") then
+                    local doors = housepickedbyplayer.HouseModel:FindFirstChild("001_RumahDoors")
+                    if doors and doors:FindFirstChild("RumahDoorFront") then
                         for _, Base in ipairs(doors.HouseDoorFront:GetChildren()) do
                             if Base:IsA("BasePart") then
                                 Base.CanCollide = not Value
@@ -1118,7 +1118,7 @@ pcall(function()
             spawn(function()
                 while getgenv().ChaosHubAutoSpawnDoorbellValue do
                     local House = workspace["001_Lots"]:FindFirstChild(tostring(SelectHouse))
-                    if House and House:FindFirstChild("HousePickedByPlayer") then
+                    if House and House:FindFirstChild("RumahPickedByPlayer") then
                         local doorbell = House.HousePickedByPlayer.HouseModel:FindFirstChild("001_DoorBell")
                         if doorbell and doorbell:FindFirstChild("TouchBell") then
                             pcall(function()
@@ -1144,9 +1144,9 @@ pcall(function()
             spawn(function()
                 while getgenv().ChaosHubAutoSpawnDoorValue do
                     local House = workspace["001_Lots"]:FindFirstChild(tostring(SelectHouse))
-                    if House and House:FindFirstChild("HousePickedByPlayer") then
-                        local doors = House.HousePickedByPlayer.HouseModel:FindFirstChild("001_HouseDoors")
-                        if doors and doors:FindFirstChild("HouseDoorFront") and doors.HouseDoorFront:FindFirstChild("Knock") then
+                    if House and House:FindFirstChild("RumahPickedByPlayer") then
+                        local doors = House.HousePickedByPlayer.HouseModel:FindFirstChild("001_RumahDoors")
+                        if doors and doors:FindFirstChild("RumahDoorFront") and doors.HouseDoorFront:FindFirstChild("Knock") then
                             pcall(function()
                                 fireclickdetector(doors.HouseDoorFront.Knock.TouchBell.ClickDetector)
                             end)
@@ -1160,40 +1160,40 @@ pcall(function()
 end)
 
 pcall(function()
-    Tab4:AddSection({ Name = "Teleporte Para Casas" })
+    Tab4:AddSection({ Name = "Teleporte Para Rumahs" })
 end)
 
 -- Lista de casas para teletransporte
 local casas = {
-    ["Casa 1"] = Vector3.new(260.29, 4.37, 209.32),
-    ["Casa 2"] = Vector3.new(234.49, 4.37, 228.00),
-    ["Casa 3"] = Vector3.new(262.79, 21.37, 210.84),
-    ["Casa 4"] = Vector3.new(229.60, 21.37, 225.40),
-    ["Casa 5"] = Vector3.new(173.44, 21.37, 228.11),
-    ["Casa 6"] = Vector3.new(-43, 21, -137),
-    ["Casa 7"] = Vector3.new(-40, 36, -137),
-    ["Casa 11"] = Vector3.new(-21, 40, 436),
-    ["Casa 12"] = Vector3.new(155, 37, 433),
-    ["Casa 13"] = Vector3.new(255, 35, 431),
-    ["Casa 14"] = Vector3.new(254, 38, 394),
-    ["Casa 15"] = Vector3.new(148, 39, 387),
-    ["Casa 16"] = Vector3.new(-17, 42, 395),
-    ["Casa 17"] = Vector3.new(-189, 37, -247),
-    ["Casa 18"] = Vector3.new(-354, 37, -244),
-    ["Casa 19"] = Vector3.new(-456, 36, -245),
-    ["Casa 20"] = Vector3.new(-453, 38, -295),
-    ["Casa 21"] = Vector3.new(-356, 38, -294),
-    ["Casa 22"] = Vector3.new(-187, 37, -295),
-    ["Casa 23"] = Vector3.new(-410, 68, -447),
-    ["Casa 24"] = Vector3.new(-348, 69, -496),
-    ["Casa 28"] = Vector3.new(-103, 12, 1087),
-    ["Casa 29"] = Vector3.new(-730, 6, 808),
-    ["Casa 30"] = Vector3.new(-245, 7, 822),
-    ["Casa 31"] = Vector3.new(639, 76, -361),
-    ["Casa 32"] = Vector3.new(-908, 6, -361),
-    ["Casa 33"] = Vector3.new(-111, 70, -417),
-    ["Casa 34"] = Vector3.new(230, 38, 569),
-    ["Casa 35"] = Vector3.new(-30, 13, 2209)
+    ["Rumah 1"] = Vector3.new(260.29, 4.37, 209.32),
+    ["Rumah 2"] = Vector3.new(234.49, 4.37, 228.00),
+    ["Rumah 3"] = Vector3.new(262.79, 21.37, 210.84),
+    ["Rumah 4"] = Vector3.new(229.60, 21.37, 225.40),
+    ["Rumah 5"] = Vector3.new(173.44, 21.37, 228.11),
+    ["Rumah 6"] = Vector3.new(-43, 21, -137),
+    ["Rumah 7"] = Vector3.new(-40, 36, -137),
+    ["Rumah 11"] = Vector3.new(-21, 40, 436),
+    ["Rumah 12"] = Vector3.new(155, 37, 433),
+    ["Rumah 13"] = Vector3.new(255, 35, 431),
+    ["Rumah 14"] = Vector3.new(254, 38, 394),
+    ["Rumah 15"] = Vector3.new(148, 39, 387),
+    ["Rumah 16"] = Vector3.new(-17, 42, 395),
+    ["Rumah 17"] = Vector3.new(-189, 37, -247),
+    ["Rumah 18"] = Vector3.new(-354, 37, -244),
+    ["Rumah 19"] = Vector3.new(-456, 36, -245),
+    ["Rumah 20"] = Vector3.new(-453, 38, -295),
+    ["Rumah 21"] = Vector3.new(-356, 38, -294),
+    ["Rumah 22"] = Vector3.new(-187, 37, -295),
+    ["Rumah 23"] = Vector3.new(-410, 68, -447),
+    ["Rumah 24"] = Vector3.new(-348, 69, -496),
+    ["Rumah 28"] = Vector3.new(-103, 12, 1087),
+    ["Rumah 29"] = Vector3.new(-730, 6, 808),
+    ["Rumah 30"] = Vector3.new(-245, 7, 822),
+    ["Rumah 31"] = Vector3.new(639, 76, -361),
+    ["Rumah 32"] = Vector3.new(-908, 6, -361),
+    ["Rumah 33"] = Vector3.new(-111, 70, -417),
+    ["Rumah 34"] = Vector3.new(230, 38, 569),
+    ["Rumah 35"] = Vector3.new(-30, 13, 2209)
 }
 
 -- Criar lista de nomes de casas ordenada
@@ -1211,7 +1211,7 @@ end)
 -- Dropdown para teletransporte
 pcall(function()
     Tab4:AddDropdown({
-        Name = "Selecionar Casa",
+        Name = "Pilih Rumah",
         Options = casasNomes,
         Callback = function(casaSelecionada)
             local player = game.Players.LocalPlayer
@@ -1222,12 +1222,12 @@ pcall(function()
     })
 end)
 
--- Label apÃ³s dropdown
+-- Label apÃƒÂ³s dropdown
 pcall(function()
-    Tab4:AddLabel("Teleporte para a Casa que Quiser")
+    Tab4:AddLabel("Teleporte para a Rumah que Quiser")
 end)
 
--- SeÃ§Ã£o para Auto Unban
+-- SeÃƒÂ§ÃƒÂ£o para Auto Unban
 pcall(function()
     Tab4:AddSection({ Name = "Auto Unban" })
 end)
@@ -1251,7 +1251,7 @@ TeleportCarro.Workspace = Workspace
 TeleportCarro.LocalPlayer = LocalPlayer
 TeleportCarro.Camera = Camera
 
--- FunÃ§Ã£o para exibir notificaÃ§Ã£o
+-- FunÃƒÂ§ÃƒÂ£o para exibir notificaÃƒÂ§ÃƒÂ£o
 function TeleportCarro:MostrarNotificacao(mensagem)
     pcall(function()
         game:GetService("StarterGui"):SetCore("SendNotification", {
@@ -1262,7 +1262,7 @@ function TeleportCarro:MostrarNotificacao(mensagem)
     end)
 end
 
--- FunÃ§Ã£o para desativar/ativar dano de queda
+-- FunÃƒÂ§ÃƒÂ£o para desativar/ativar dano de queda
 function TeleportCarro:ToggleFallDamage(disable)
     if not self.LocalPlayer.Character or not self.LocalPlayer.Character:FindFirstChild("Humanoid") then return false end
     local humanoid = self.LocalPlayer.Character.Humanoid
@@ -1279,16 +1279,16 @@ function TeleportCarro:ToggleFallDamage(disable)
     end
 end
 
--- FunÃ§Ã£o para teleportar o jogador para o assento do carro
+-- FunÃƒÂ§ÃƒÂ£o para teleportar o jogador para o assento do carro
 function TeleportCarro:TeleportToSeat(seat, car)
     if not self.LocalPlayer.Character or not self.LocalPlayer.Character:FindFirstChild("Humanoid") then
-        self:MostrarNotificacao("Personagem nÃ£o encontrado!")
+        self:MostrarNotificacao("Personagem nÃƒÂ£o encontrado!")
         return false
     end
     local humanoid = self.LocalPlayer.Character.Humanoid
     local rootPart = self.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
     if not rootPart then
-        self:MostrarNotificacao("Parte raiz do personagem nÃ£o encontrada!")
+        self:MostrarNotificacao("Parte raiz do personagem nÃƒÂ£o encontrada!")
         return false
     end
 
@@ -1303,10 +1303,10 @@ function TeleportCarro:TeleportToSeat(seat, car)
     return humanoid.SeatPart == seat
 end
 
--- FunÃ§Ã£o para teleportar o carro para o void com delay
+-- FunÃƒÂ§ÃƒÂ£o para teleportar o carro para o void com delay
 function TeleportCarro:TeleportToVoid(car)
     if not car then
-        self:MostrarNotificacao("VeÃ­culo invÃ¡lido!")
+        self:MostrarNotificacao("VeÃƒÂ­culo invÃƒÂ¡lido!")
         return
     end
     if not car.PrimaryPart then
@@ -1314,7 +1314,7 @@ function TeleportCarro:TeleportToVoid(car)
         if body and body:IsA("BasePart") then
             car.PrimaryPart = body
         else
-            self:MostrarNotificacao("Parte principal do veÃ­culo nÃ£o encontrada!")
+            self:MostrarNotificacao("Parte principal do veÃƒÂ­culo nÃƒÂ£o encontrada!")
             return
         end
     end
@@ -1323,10 +1323,10 @@ function TeleportCarro:TeleportToVoid(car)
     task.wait(0.5)
 end
 
--- FunÃ§Ã£o para teleportar o carro para a posiÃ§Ã£o do jogador com delay
+-- FunÃƒÂ§ÃƒÂ£o para teleportar o carro para a posiÃƒÂ§ÃƒÂ£o do jogador com delay
 function TeleportCarro:TeleportToPlayer(car, playerPos)
     if not car then
-        self:MostrarNotificacao("VeÃ­culo invÃ¡lido!")
+        self:MostrarNotificacao("VeÃƒÂ­culo invÃƒÂ¡lido!")
         return
     end
     if not car.PrimaryPart then
@@ -1334,7 +1334,7 @@ function TeleportCarro:TeleportToPlayer(car, playerPos)
         if body and body:IsA("BasePart") then
             car.PrimaryPart = body
         else
-            self:MostrarNotificacao("Parte principal do veÃ­culo nÃ£o encontrada!")
+            self:MostrarNotificacao("Parte principal do veÃƒÂ­culo nÃƒÂ£o encontrada!")
             return
         end
     end
@@ -1343,7 +1343,7 @@ function TeleportCarro:TeleportToPlayer(car, playerPos)
     task.wait(0.5)
 end
 
--- FunÃ§Ã£o para sair do carro e voltar Ã  posiÃ§Ã£o original
+-- FunÃƒÂ§ÃƒÂ£o para sair do carro e voltar Ãƒ  posiÃƒÂ§ÃƒÂ£o original
 function TeleportCarro:ExitCarAndReturn(originalPos)
     if not self.LocalPlayer.Character or not self.LocalPlayer.Character:FindFirstChild("Humanoid") then return end
     local humanoid = self.LocalPlayer.Character.Humanoid
@@ -1356,14 +1356,14 @@ function TeleportCarro:ExitCarAndReturn(originalPos)
     end
 end
 
--- FunÃ§Ã£o para atualizar a lista de carros no dropdown
+-- FunÃƒÂ§ÃƒÂ£o para atualizar a lista de carros no dropdown
 function TeleportCarro:AtualizarListaCarros()
     local pastaVeiculos = self.Workspace:FindFirstChild("Vehicles")
     local listaCarros = {}
     
     if pastaVeiculos then
         for _, carro in ipairs(pastaVeiculos:GetChildren()) do
-            if carro.Name:match("Car$") then
+            if carro.Name:match("Mobil$") then
                 table.insert(listaCarros, carro.Name)
             end
         end
@@ -1372,7 +1372,7 @@ function TeleportCarro:AtualizarListaCarros()
     return listaCarros
 end
 
--- ParÃ¡grafo
+-- ParÃƒÂ¡grafo
 Tab5:AddParagraph({
     Title = "use o void protection",
     Content = ""
@@ -1392,7 +1392,7 @@ Tab5:AddToggle({
             if self.LocalPlayer.Character and self.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
                 originalPosition = self.LocalPlayer.Character.HumanoidRootPart.Position
             else
-                TeleportCarro:MostrarNotificacao("Personagem nÃ£o encontrado!")
+                TeleportCarro:MostrarNotificacao("Personagem nÃƒÂ£o encontrado!")
                 return
             end
 
@@ -1401,13 +1401,13 @@ Tab5:AddToggle({
             spawn(function()
                 local vehiclesFolder = TeleportCarro.Workspace:FindFirstChild("Vehicles")
                 if not vehiclesFolder then
-                    TeleportCarro:MostrarNotificacao("Pasta de veÃ­culos nÃ£o encontrada!")
+                    TeleportCarro:MostrarNotificacao("Pasta de veÃƒÂ­culos nÃƒÂ£o encontrada!")
                     return
                 end
 
                 local cars = {}
                 for _, car in ipairs(vehiclesFolder:GetChildren()) do
-                    if car.Name:match("Car$") then
+                    if car.Name:match("Mobil$") then
                         table.insert(cars, car)
                     end
                 end
@@ -1442,7 +1442,7 @@ local Section = Tab5:AddSection({"Funcs dos carros"})
 
 -- Criar o dropdown
 local Dropdown = Tab5:AddDropdown({
-    Name = "Selecionar Carro do Jogador",
+    Name = "Pilih Mobilro do Jogador",
     Description = "Selecione o carro de um jogador",
     Default = nil,
     Options = TeleportCarro:AtualizarListaCarros(),
@@ -1451,9 +1451,9 @@ local Dropdown = Tab5:AddDropdown({
     end
 })
 
--- Toggle para ver a cÃ¢mera do carro selecionado
+-- Toggle para ver a cÃƒÂ¢mera do carro selecionado
 Tab5:AddToggle({
-    Name = "Ver Camera do Carro Selecionado",
+    Name = "Ver Camera do Mobilro Selecionado",
     Description = "Foca a camera no carro selecionado",
     Default = false,
     Callback = function(state)
@@ -1465,36 +1465,36 @@ Tab5:AddToggle({
 
             local vehiclesFolder = TeleportCarro.Workspace:FindFirstChild("Vehicles")
             if not vehiclesFolder then
-                TeleportCarro:MostrarNotificacao("Pasta de veÃ­culos nÃ£o encontrada!")
+                TeleportCarro:MostrarNotificacao("Pasta de veÃƒÂ­culos nÃƒÂ£o encontrada!")
                 return
             end
 
             local vehicle = vehiclesFolder:FindFirstChild(_G.SelectedVehicle)
             if not vehicle then
-                TeleportCarro:MostrarNotificacao("Carro selecionado nÃ£o encontrado!")
+                TeleportCarro:MostrarNotificacao("Mobilro selecionado nÃƒÂ£o encontrado!")
                 return
             end
 
             local vehicleSeat = vehicle:FindFirstChildWhichIsA("VehicleSeat", true)
             if not vehicleSeat then
-                TeleportCarro:MostrarNotificacao("Assento do carro nÃ£o encontrado!")
+                TeleportCarro:MostrarNotificacao("Kursi do carro nÃƒÂ£o encontrado!")
                 return
             end
 
-            -- Salvar o estado original da cÃ¢mera
+            -- Salvar o estado original da cÃƒÂ¢mera
             TeleportCarro.OriginalCameraSubject = TeleportCarro.Camera.CameraSubject
             TeleportCarro.OriginalCameraType = TeleportCarro.Camera.CameraType
 
-            -- Ajustar a cÃ¢mera para o assento do carro, mesmo se ocupado
+            -- Ajustar a cÃƒÂ¢mera para o assento do carro, mesmo se ocupado
             TeleportCarro.Camera.CameraSubject = vehicleSeat
             TeleportCarro.Camera.CameraType = Enum.CameraType.Follow
-            TeleportCarro:MostrarNotificacao("CÃ¢mera ajustada para o carro " .. _G.SelectedVehicle .. "!")
+            TeleportCarro:MostrarNotificacao("CÃƒÂ¢mera ajustada para o carro " .. _G.SelectedVehicle .. "!")
         else
-            -- Restaurar a cÃ¢mera ao estado original
+            -- Restaurar a cÃƒÂ¢mera ao estado original
             if TeleportCarro.OriginalCameraSubject then
                 TeleportCarro.Camera.CameraSubject = TeleportCarro.OriginalCameraSubject
                 TeleportCarro.Camera.CameraType = TeleportCarro.OriginalCameraType or Enum.CameraType.Custom
-                TeleportCarro:MostrarNotificacao("CÃ¢mera restaurada ao normal!")
+                TeleportCarro:MostrarNotificacao("CÃƒÂ¢mera restaurada ao normal!")
                 TeleportCarro.OriginalCameraSubject = nil
                 TeleportCarro.OriginalCameraType = nil
             end
@@ -1512,9 +1512,9 @@ end)
 
 local Section = Tab5:AddSection({"functions kill e trazer"})
 
--- BotÃ£o para destruir carro selecionado
+-- BotÃƒÂ£o para destruir carro selecionado
 Tab5:AddButton({
-    Name = "Destruir Carro Selecionado",
+    Name = "Destruir Mobilro Selecionado",
     Description = "Teleporta o carro selecionado para o void",
     Callback = function()
         if not _G.SelectedVehicle or _G.SelectedVehicle == "" then
@@ -1524,24 +1524,24 @@ Tab5:AddButton({
 
         local vehiclesFolder = TeleportCarro.Workspace:FindFirstChild("Vehicles")
         if not vehiclesFolder then
-            TeleportCarro:MostrarNotificacao("Pasta de veÃ­culos nÃ£o encontrada!")
+            TeleportCarro:MostrarNotificacao("Pasta de veÃƒÂ­culos nÃƒÂ£o encontrada!")
             return
         end
 
         local vehicle = vehiclesFolder:FindFirstChild(_G.SelectedVehicle)
         if not vehicle then
-            TeleportCarro:MostrarNotificacao("Carro selecionado nÃ£o encontrado!")
+            TeleportCarro:MostrarNotificacao("Mobilro selecionado nÃƒÂ£o encontrado!")
             return
         end
 
         local vehicleSeat = vehicle:FindFirstChildWhichIsA("VehicleSeat", true)
         if not vehicleSeat then
-            TeleportCarro:MostrarNotificacao("Assento do carro nÃ£o encontrado!")
+            TeleportCarro:MostrarNotificacao("Kursi do carro nÃƒÂ£o encontrado!")
             return
         end
 
         if vehicleSeat.Occupant then
-            TeleportCarro:MostrarNotificacao("O kill car nÃ£o foi possÃ­vel, hÃ¡ alguÃ©m sentado no assento do motorista!")
+            TeleportCarro:MostrarNotificacao("O kill car nÃƒÂ£o foi possÃƒÂ­vel, hÃƒÂ¡ alguÃƒÂ©m sentado no assento do motorista!")
             return
         end
 
@@ -1549,7 +1549,7 @@ Tab5:AddButton({
         if TeleportCarro.LocalPlayer.Character and TeleportCarro.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
             originalPos = TeleportCarro.LocalPlayer.Character.HumanoidRootPart.Position
         else
-            TeleportCarro:MostrarNotificacao("Personagem do jogador nÃ£o encontrado!")
+            TeleportCarro:MostrarNotificacao("Personagem do jogador nÃƒÂ£o encontrado!")
             return
         end
 
@@ -1557,7 +1557,7 @@ Tab5:AddButton({
         local success = TeleportCarro:TeleportToSeat(vehicleSeat, vehicle)
         if success then
             TeleportCarro:TeleportToVoid(vehicle)
-            TeleportCarro:MostrarNotificacao("Carro " .. _G.SelectedVehicle .. " foi teleportado para o void!")
+            TeleportCarro:MostrarNotificacao("Mobilro " .. _G.SelectedVehicle .. " foi teleportado para o void!")
             TeleportCarro:ExitCarAndReturn(originalPos)
         else
             TeleportCarro:MostrarNotificacao("Falha ao sentar no carro!")
@@ -1566,9 +1566,9 @@ Tab5:AddButton({
     end
 })
 
--- BotÃ£o para trazer carro selecionado
+-- BotÃƒÂ£o para trazer carro selecionado
 Tab5:AddButton({
-    Name = "Trazer Carro Selecionado",
+    Name = "Trazer Mobilro Selecionado",
     Description = "Teleporta o carro selecionado para sua posicao",
     Callback = function()
         if not _G.SelectedVehicle or _G.SelectedVehicle == "" then
@@ -1578,24 +1578,24 @@ Tab5:AddButton({
 
         local vehiclesFolder = TeleportCarro.Workspace:FindFirstChild("Vehicles")
         if not vehiclesFolder then
-            TeleportCarro:MostrarNotificacao("Pasta de veÃ­culos nÃ£o encontrada!")
+            TeleportCarro:MostrarNotificacao("Pasta de veÃƒÂ­culos nÃƒÂ£o encontrada!")
             return
         end
 
         local vehicle = vehiclesFolder:FindFirstChild(_G.SelectedVehicle)
         if not vehicle then
-            TeleportCarro:MostrarNotificacao("Carro selecionado nÃ£o encontrado!")
+            TeleportCarro:MostrarNotificacao("Mobilro selecionado nÃƒÂ£o encontrado!")
             return
         end
 
         local vehicleSeat = vehicle:FindFirstChildWhichIsA("VehicleSeat", true)
         if not vehicleSeat then
-            TeleportCarro:MostrarNotificacao("Assento do carro nÃ£o encontrado!")
+            TeleportCarro:MostrarNotificacao("Kursi do carro nÃƒÂ£o encontrado!")
             return
         end
 
         if vehicleSeat.Occupant then
-            TeleportCarro:MostrarNotificacao("O teleporte do carro nÃ£o foi possÃ­vel, hÃ¡ alguÃ©m sentado no assento do motorista!")
+            TeleportCarro:MostrarNotificacao("O teleporte do carro nÃƒÂ£o foi possÃƒÂ­vel, hÃƒÂ¡ alguÃƒÂ©m sentado no assento do motorista!")
             return
         end
 
@@ -1603,7 +1603,7 @@ Tab5:AddButton({
         if TeleportCarro.LocalPlayer.Character and TeleportCarro.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
             originalPos = TeleportCarro.LocalPlayer.Character.HumanoidRootPart.Position
         else
-            TeleportCarro:MostrarNotificacao("Personagem do jogador nÃ£o encontrado!")
+            TeleportCarro:MostrarNotificacao("Personagem do jogador nÃƒÂ£o encontrado!")
             return
         end
 
@@ -1611,7 +1611,7 @@ Tab5:AddButton({
         local success = TeleportCarro:TeleportToSeat(vehicleSeat, vehicle)
         if success then
             TeleportCarro:TeleportToPlayer(vehicle, originalPos)
-            TeleportCarro:MostrarNotificacao("Carro " .. _G.SelectedVehicle .. " foi teleportado para vocÃª!")
+            TeleportCarro:MostrarNotificacao("Mobilro " .. _G.SelectedVehicle .. " foi teleportado para vocÃƒÂª!")
             TeleportCarro:ExitCarAndReturn(originalPos)
         else
             TeleportCarro:MostrarNotificacao("Falha ao sentar no carro!")
@@ -1620,29 +1620,29 @@ Tab5:AddButton({
     end
 })
 
--- BotÃ£o para trazer todos os carros
+-- BotÃƒÂ£o para trazer todos os carros
 Tab5:AddButton({
-    Name = "Trazer Todos os Carros",
+    Name = "Trazer Todos os Mobilros",
     Description = "Teleporta todos os carros do servidor para sua posicao",
     Callback = function()
         local originalPos
         if TeleportCarro.LocalPlayer.Character and TeleportCarro.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
             originalPos = TeleportCarro.LocalPlayer.Character.HumanoidRootPart.Position
         else
-            TeleportCarro:MostrarNotificacao("Personagem do jogador nÃ£o encontrado!")
+            TeleportCarro:MostrarNotificacao("Personagem do jogador nÃƒÂ£o encontrado!")
             return
         end
 
         local vehiclesFolder = TeleportCarro.Workspace:FindFirstChild("Vehicles")
         if not vehiclesFolder then
-            TeleportCarro:MostrarNotificacao("Pasta de veÃ­culos nÃ£o encontrada!")
+            TeleportCarro:MostrarNotificacao("Pasta de veÃƒÂ­culos nÃƒÂ£o encontrada!")
             return
         end
 
         local isFallDamageOff = TeleportCarro:ToggleFallDamage(true)
         local cars = {}
         for _, car in ipairs(vehiclesFolder:GetChildren()) do
-            if car.Name:match("Car$") then
+            if car.Name:match("Mobil$") then
                 table.insert(cars, car)
             end
         end
@@ -1654,23 +1654,23 @@ Tab5:AddButton({
                 if success then
                     TeleportCarro:TeleportToPlayer(car, originalPos)
                     TeleportCarro:ExitCarAndReturn(originalPos)
-                    TeleportCarro:MostrarNotificacao("Carro " .. car.Name .. " foi teleportado para vocÃª!")
+                    TeleportCarro:MostrarNotificacao("Mobilro " .. car.Name .. " foi teleportado para vocÃƒÂª!")
                     task.wait(1)
                 else
                     TeleportCarro:MostrarNotificacao("Falha ao sentar no carro " .. car.Name .. "!")
                 end
             else
                 if vehicleSeat then
-                    TeleportCarro:MostrarNotificacao("Carro " .. car.Name .. " ignorado: alguÃ©m estÃ¡ no assento do motorista!")
+                    TeleportCarro:MostrarNotificacao("Mobilro " .. car.Name .. " ignorado: alguÃƒÂ©m estÃƒÂ¡ no assento do motorista!")
                 else
-                    TeleportCarro:MostrarNotificacao("Carro " .. car.Name .. " ignorado: assento nÃ£o encontrado!")
+                    TeleportCarro:MostrarNotificacao("Mobilro " .. car.Name .. " ignorado: assento nÃƒÂ£o encontrado!")
                 end
             end
         end
 
         TeleportCarro:ToggleFallDamage(false)
         if #cars == 0 then
-            TeleportCarro:MostrarNotificacao("Nenhum carro disponÃ­vel para teleportar!")
+            TeleportCarro:MostrarNotificacao("Nenhum carro disponÃƒÂ­vel para teleportar!")
         end
     end
 })
@@ -1694,18 +1694,18 @@ end)
                                                    -- === Tab 13: RGB === --
 ---------------------------------------------------------------------------------------------------------------------------------
 
-local Section = Tab13:AddSection({"FunÃ§Ãµes RGB"})
+local Section = Tab13:AddSection({"FunÃƒÂ§ÃƒÂµes RGB"})
 
 local isNameActive = false
 local isBioActive = false
 
 local SectionRGBName = Tab13:AddSection({
-    Name = "Name RGB"
+    Name = "Nama RGB"
 })
 
 Tab13:AddToggle({
-    Name = "Name RGB",
-    Description = "Make the Name colorful",
+    Name = "Nama RGB",
+    Description = "Make the Nama colorful",
     Default = false,
     Callback = function(value)
         isNameActive = value
@@ -1743,7 +1743,7 @@ spawn(function()
         if isNameActive then
             local randomColor = vibrantColors[math.random(#vibrantColors)]
             local args = {
-                [1] = "PickingRPNameColor",
+                [1] = "PickingRPNamaColor",
                 [2] = randomColor
             }
             game:GetService("ReplicatedStorage").RE:FindFirstChild("1RPNam1eColo1r"):FireServer(unpack(args))
@@ -1766,7 +1766,7 @@ spawn(function()
     end
 end)
 
--- Velocidade controlada pelo slider (quanto maior, mais rÃ¡pido)
+-- Velocidade controlada pelo slider (quanto maior, mais rÃƒÂ¡pido)
 local rgbSpeed = 1
 
 Tab13:AddSlider({
@@ -1781,13 +1781,13 @@ Tab13:AddSlider({
     end
 })
 
--- FunÃ§Ã£o para criar cor RGB suave com HSV
+-- FunÃƒÂ§ÃƒÂ£o para criar cor RGB suave com HSV
 local function getRainbowColor(speedMultiplier)
     local h = (tick() * speedMultiplier % 5) / 5 -- gira o hue suavemente de 0 a 1
     return Color3.fromHSV(h, 1, 1)
 end
 
--- FunÃ§Ã£o para disparar eventos
+-- FunÃƒÂ§ÃƒÂ£o para disparar eventos
 local function fireServer(eventName, args)
     local event = game:GetService("ReplicatedStorage"):FindFirstChild("RE")
     if event and event:FindFirstChild(eventName) then
@@ -1797,7 +1797,7 @@ local function fireServer(eventName, args)
     end
 end
 
-local Section = Tab13:AddSection({"RGB para usar em vocÃª"})
+local Section = Tab13:AddSection({"RGB para usar em vocÃƒÂª"})
 
 -- Nome + Bio RGB  juntos
 local nameBioRGBActive = false
@@ -1810,7 +1810,7 @@ Tab13:AddToggle({
             task.spawn(function()
                 while nameBioRGBActive and LocalPlayer.Character do
                     local color = getRainbowColor(rgbSpeed)
-                    fireServer("1RPNam1eColo1r", { "PickingRPNameColor", color })
+                    fireServer("1RPNam1eColo1r", { "PickingRPNamaColor", color })
                     fireServer("1RPNam1eColo1r", { "PickingRPBioColor", color })
                     task.wait(0.03)
                 end
@@ -1820,7 +1820,7 @@ Tab13:AddToggle({
 })
 
 local ToggleCorpo = Tab13:AddToggle({
-    Name = "RGB Corpo",
+    Name = "RGB Warnapo",
     Description = "RGB  no corpo",
     Default = false
 })
@@ -1868,7 +1868,7 @@ local Section = Tab13:AddSection({"veiculos e casa"})
 
 
 local ToggleCasa = Tab13:AddToggle({
-    Name = "RGB Casa",
+    Name = "RGB Rumah",
     Description = "RGB  na casa",
     Default = false
 })
@@ -1877,7 +1877,7 @@ ToggleCasa:Callback(function(Value)
     task.spawn(function()
         while getgenv().rgbCasa do
             fireServer("1Player1sHous1e", {
-                "ColorPickHouse",
+                "ColorPickRumah",
                 getRainbowColor(rgbSpeed)
             })
             task.wait(0.1)
@@ -1889,8 +1889,8 @@ end)
 -- Carro RGB 
 local carRGBActive = false
 Tab13:AddToggle({
-    Name = "Carro RGB  (Premium)",
-    Description = "Altera a cor do carro com RGB contÃ­nuo. Pode causar kick se nÃ£o for premium!",
+    Name = "Mobilro RGB  (Premium)",
+    Description = "Altera a cor do carro com RGB contÃƒÂ­nuo. Pode causar kick se nÃƒÂ£o for premium!",
     Default = false,
     Callback = function(state)
         carRGBActive = state
@@ -1898,7 +1898,7 @@ Tab13:AddToggle({
             task.spawn(function()
                 while carRGBActive and LocalPlayer.Character do
                     local color = getRainbowColor(rgbSpeed)
-                    fireServer("1Player1sCa1r", { "PickingCarColor", color })
+                    fireServer("1Player1sCa1r", { "PickingMobilColor", color })
                     task.wait(0.03)
                 end
             end)
@@ -1930,11 +1930,11 @@ end)
 local Section = Tab13:AddSection({"itens/tool"})
 
 
--- NOVO TOGGLE: RÃ¡dio RGB
+-- NOVO TOGGLE: RÃƒÂ¡dio RGB
 local radioRGBActive = false
 Tab13:AddToggle({
-    Name = "RÃ¡dio RGB  ",
-    Description = "Altera a cor do rÃ¡dio com RGB contÃ­nuo",
+    Name = "RÃƒÂ¡dio RGB  ",
+    Description = "Altera a cor do rÃƒÂ¡dio com RGB contÃƒÂ­nuo",
     Default = false,
     Callback = function(state)
         radioRGBActive = state
@@ -2028,8 +2028,8 @@ local loopAtivo = false
 local InputID = ""
 
 Tab7:AddTextBox({
-    Name = "Insira o ID Audio All",
-    Description = "Digite o ID do som que deseja tocar",
+    Name = "Masukkan o ID Audio All",
+    Description = "Ketik o ID do som que deseja tocar",
     Default = "",
     PlaceholderText = "Exemplo: 6832470734",
     ClearTextOnFocus = true,
@@ -2049,8 +2049,8 @@ local function fireServer(eventName, args)
 end
 
 Tab7:AddButton({
-    Name = "Tocar Som",
-    Description = "Clique para tocar a mÃºsica inserida",
+    Name = "Putar Suara",
+    Description = "Clique para tocar a mÃƒÂºsica inserida",
     Callback = function()
         if InputID then
             fireServer("1Gu1nSound1s", {Workspace, InputID, 1})
@@ -2139,7 +2139,7 @@ local function createSoundDropdown(title, musicOptions, defaultOption)
     })
 
     Tab7:AddButton({
-        Name = "Tocar Som Selecionado",
+        Name = "Putar Suara Selecionado",
         Description = "Clique para tocar o som do dropdown",
         Callback = function()
             if selectedSoundID then
@@ -2173,7 +2173,7 @@ end
 createSoundDropdown("Selecione um meme", {
     ["Memes"] = {
         {name = "pankapakan", id = "122547522269143"}, 
-        {name = "Gemido ultra rÃ¡pido", id = "128863565301778"},
+        {name = "Gemido ultra rÃƒÂ¡pido", id = "128863565301778"},
         {name = "vai g0z@?", id = "116293771329297"},
         {name = "nao choraxxx", id = "94377077452021"},
         {name = "G0z33iiii", id = "93462644278510"},
@@ -2202,7 +2202,7 @@ createSoundDropdown("Selecione um meme", {
         {name = "shoope", id = "8747441609"},
         {name = "quenojo", id = "103440368630269"},
         {name = "sai dai lava prato", id = "101232400175829"},
-        {name = "se e loko numconpeÃ§a", id = "78442476709262"},
+        {name = "se e loko numconpeÃƒÂ§a", id = "78442476709262"},
         {name = "mita sequer que eu too uma", id = "94889439372168"},
         {name = "Deita aqui eu mandei vc deitar sirens", id = "100291188941582"},
         {name = "miau", id = "131804436682424"},
@@ -2215,12 +2215,12 @@ createSoundDropdown("Selecione um meme", {
         {name = "OH MY GOD", id = "73349649774476"},
         {name = "aahhh plankton meme", id = "95982351322190"},
         {name = "CHINABOY", id = "84403553163931"},
-        {name = "PASTOR MIRIM E A LÃNGUA DOS ANJOS", id = "71153532555470"},
-        {name = "Sai d3sgraÃ§@", id = "106973692977609"},
+        {name = "PASTOR MIRIM E A LÃƒÂNGUA DOS ANJOS", id = "71153532555470"},
+        {name = "Sai d3sgraÃƒÂ§@", id = "106973692977609"},
         {name = "opa salve tudo bem?", id = "80870678096428"},
         {name = "OLHA O CARRO DO DANONE", id = "110493863773948"},
-        {name = "NÃ£oooo, NÃ£oooo, NÃ£ooo!!!!!", id = "95825536480898"},
-        {name = "UM PÃ‰ DE SIRIGUELA KK", id = "112804043442210"},
+        {name = "NÃƒÂ£oooo, NÃƒÂ£oooo, NÃƒÂ£ooo!!!!!", id = "95825536480898"},
+        {name = "UM PÃƒâ€° DE SIRIGUELA KK", id = "112804043442210"},
         {name = "e o carro da pamonha", id = "94951629392683"},
         {name = "BOM DIAAAAAAAAAA", id = "136579844511260"},
         {name = "ai-meu-chiclete", id = "92911732806153"},
@@ -2242,7 +2242,7 @@ createSoundDropdown("Selecione um meme", {
         {name = "Eli gosta", id = "105012436535315"},
         {name = "um cavalo de tres pernas?", id = "8164241439"},
         {name = "voces sao um bado de fdp", id = "8232773326"},
-        {name = "HAHA TROLLEI ATÃ‰ VOCÃŠ", id = "7021794555"},
+        {name = "HAHA TROLLEI ATÃƒâ€° VOCÃƒÅ ", id = "7021794555"},
         {name = "Calaboca Kenga", id = "86494561679259"},
         {name = "alvincut", id = "88788640194373"},
         {name = "e a risada faz como?", id = "140713372459057"},
@@ -2255,9 +2255,9 @@ createSoundDropdown("Selecione um meme", {
         {name = "gomo gomo no!!!", id = "137067472449625"},
         {name = "arroto", id = "140203378050178"},
         {name = "iraaaa", id = "136752451575091"},
-        {name = "nÃ£o fica se achando muito nÃ£o", id = "101588606280167"},
-        {name = "WhatsApp notificaÃ§aoV1", id = "107004225739474"},
-        {name = "WhatsApp notificaÃ§aoV2", id = "18850631582"},
+        {name = "nÃƒÂ£o fica se achando muito nÃƒÂ£o", id = "101588606280167"},
+        {name = "WhatsApp notificaÃƒÂ§aoV1", id = "107004225739474"},
+        {name = "WhatsApp notificaÃƒÂ§aoV2", id = "18850631582"},
         {name = "SamsungV1", id = "123767635061073"},
         {name = "SamsungV2", id = "96579234730244"}, 
         {name = "Shiiii", id = "120566727202986"},
@@ -2275,7 +2275,7 @@ createSoundDropdown("Selecione um meme", {
         {name = "deley", id = "102906880476838"},
         {name = "Tu e um beta", id = "130233956349541"},
         {name = "Porfavor n tira eu nao", id = "85321374020324"},
-        {name = "OlÃ¡ beleza vc pode me dÃ¡ muitos", id = "74235334504693"},
+        {name = "OlÃƒÂ¡ beleza vc pode me dÃƒÂ¡ muitos", id = "74235334504693"},
         {name = "Discord sus", id = "122662798976905"},
         {name = "rojao apito", id = "6549021381"},
         {name = "off", id = "1778829098"},
@@ -2290,14 +2290,14 @@ createSoundDropdown("Selecione um meme", {
     }
 }, "pankapakan")
 
-local Section = Tab7:AddSection({"Loop Ã¡udio estourado"})
+local Section = Tab7:AddSection({"Loop ÃƒÂ¡udio estourado"})
 
 --// Toggle de loop para som fixo (rbxassetid://6314880174)
 local loopSomFixoAtivo = false
 local somFixoID = 6314880174
 
 Tab7:AddToggle({
-    Name = "Loop Ã¡udio estourado",
+    Name = "Loop ÃƒÂ¡udio estourado",
     Description = "Ative para tocar o som fixo em loop infinito",
     Default = false,
     Callback = function(state)
@@ -2386,7 +2386,7 @@ createSoundDropdown("Selecione um terror ou efeito", {
         {name = "mimic jumpscare", id = "91998575878959"},
         {name = "DOORS Glitch Jumpscare Sound", id = "96377507894391"},
         {name = "FNAS 4 Nightmare Mario", id = "99804224106385"},
-        {name = "Death House I Jumpscare Sound", id = "8151488745"},
+        {name = "Death Rumah I Jumpscare Sound", id = "8151488745"},
         {name = "Shinky Jumpscare", id = "123447772144411"},
         {name = "FNaTI Jumpscare Oblitus casa", id = "18338717319"},
         {name = "fnaf jumpscare loadmode", id = "18911896588"},
@@ -2402,30 +2402,30 @@ createSoundDropdown("Selecione um terror ou efeito", {
 local function tocarMusica(id)
     local ReplicatedStorage = game:GetService("ReplicatedStorage")
     
-    -- RÃ¡dio (ToolMusicText)
+    -- RÃƒÂ¡dio (ToolMusicText)
     local argsRadio = {
-        [1] = "ToolMusicText",
+        [1] = "ToolMusikText",
         [2] = id
     }
     ReplicatedStorage:WaitForChild("RE"):WaitForChild("PlayerToolEvent"):FireServer(unpack(argsRadio))
     
     -- Casa (PickHouseMusicText)
     local argsCasa = {
-        [1] = "PickHouseMusicText",
+        [1] = "PickRumahMusikText",
         [2] = id
     }
     ReplicatedStorage:WaitForChild("RE"):WaitForChild("1Player1sHous1e"):FireServer(unpack(argsCasa))
 
     -- Carro (PickingCarMusicText)
     local argsCarro = {
-        [1] = "PickingCarMusicText",
+        [1] = "PickingMobilMusikText",
         [2] = id
     }
     ReplicatedStorage:WaitForChild("RE"):WaitForChild("1Player1sCa1r"):FireServer(unpack(argsCarro))
 
     -- Scooter (PickingScooterMusicText)
     local argsScooter = {
-        [1] = "PickingScooterMusicText",
+        [1] = "PickingScooterMusikText",
         [2] = id
     }
     ReplicatedStorage:WaitForChild("RE"):WaitForChild("1NoMoto1rVehicle1s"):FireServer(unpack(argsScooter))
@@ -2436,8 +2436,8 @@ local function isValidMusicId(value)
 end
 
 Tab8:AddTextBox({
-    Name = "ID da mÃºsica",
-    PlaceholderText = "Digite o ID e pressione Enter",
+    Name = "ID da mÃƒÂºsica",
+    PlaceholderText = "Ketik o ID e pressione Enter",
     Callback = function(value)
         if value and value ~= "" then
             tocarMusica(tostring(value))
@@ -2459,7 +2459,7 @@ local function createMusicDropdown(title, musicOptions, defaultOption)
     end
 
     local function playMusic(soundId)
-        tocarMusica(tostring(soundId)) -- Usa a funÃ§Ã£o tocarMusica para tocar em todos os contextos
+        tocarMusica(tostring(soundId)) -- Usa a funÃƒÂ§ÃƒÂ£o tocarMusica para tocar em todos os contextos
     end
 
     Tab8:AddDropdown({
@@ -2479,27 +2479,27 @@ local function createMusicDropdown(title, musicOptions, defaultOption)
     })
 end
 
--- Dropdown "ForrÃ³"
-createMusicDropdown("ForrÃ³", {
+-- Dropdown "ForrÃƒÂ³"
+createMusicDropdown("ForrÃƒÂ³", {
     ["forro"] = {
-        {name = "forrÃ³ ja cansou", id = "74812784884330"},
+        {name = "forrÃƒÂ³ ja cansou", id = "74812784884330"},
         {name = "lenbro ate hoje", id = "71531533552899"},
         {name = "escolha certa", id = "107088620814881"},
-        {name = "forrÃ³ da rezenha", id = "120973520531216"},
-        {name = "forrÃ³ dudu", id = "74404168179733"},
-        {name = "forrÃ³ sao joao", id = "106364874935196"},
-        {name = "forrÃ³ engraÃ§ado paia", id = "76524290482399"},
+        {name = "forrÃƒÂ³ da rezenha", id = "120973520531216"},
+        {name = "forrÃƒÂ³ dudu", id = "74404168179733"},
+        {name = "forrÃƒÂ³ sao joao", id = "106364874935196"},
+        {name = "forrÃƒÂ³ engraÃƒÂ§ado paia", id = "76524290482399"},
         {name = "100% forro vaquejada", id = "92295159623916"},
-        {name = "PASTOR MIRIM E A LÃNGUA DOS ANJOS", id = "71153532555470"},
-        {name = "PARA NÃƒO ESQUECER QUEM SOMOS", id = "88937498361674"},
+        {name = "PASTOR MIRIM E A LÃƒÂNGUA DOS ANJOS", id = "71153532555470"},
+        {name = "PARA NÃƒÆ’O ESQUECER QUEM SOMOS", id = "88937498361674"},
         {name = "Uno zero", id = "112959083808887"},
         {name = "Iate do neymar", id = "135738534706063"},
         {name = "Batidao na aldeia", id = "79953696595578"},
     }
 }, "Option 1")
 
--- Dropdown "MÃºsicas e Memes AleatÃ³rio"
-createMusicDropdown("MÃºsicas e Memes AleatÃ³rio", {
+-- Dropdown "MÃƒÂºsicas e Memes AleatÃƒÂ³rio"
+createMusicDropdown("MÃƒÂºsicas e Memes AleatÃƒÂ³rio", {
     ["forro"] = {
         {name = "ANXIETY (Amapiano Re-fix)", id = "101483901475189"}, 
         {name = "Weeks& 3 days", id = "120817494107898"},
@@ -2515,13 +2515,13 @@ createMusicDropdown("MÃºsicas e Memes AleatÃ³rio", {
         {name = "Alone in Motion", id = "122379348696948"},
         {name = "Fade Away", id = "81002139735874"},
         {name = "Wounds & Wishes", id = "109347979566607"},
-        {name = "AscensÃ£o do Monarca", id = "101864243033211"},
+        {name = "AscensÃƒÂ£o do Monarca", id = "101864243033211"},
         {name = "carro do ovo", id = "3148329638"},
         {name = "ingles bus (fling ou kill bus)", id = "123268013026823"},
         {name = "MIKU MIKU HATSUNE", id = "112783541496955"},
         {name = "Five Nights at Freddy's", id = "110733765539890"},
         {name = "Rat Dance", id = "133496635668044"},
-        {name = "Escalando a SeleÃ§Ã£o Brasileira para a Copa", id = "116546457407236"},
+        {name = "Escalando a SeleÃƒÂ§ÃƒÂ£o Brasileira para a Copa", id = "116546457407236"},
     }
 }, "Option 1")
 
@@ -2531,13 +2531,13 @@ createMusicDropdown("Funk", {
         {name = "Deixa eu mandar meu passinho", id = "77741294709660"},
         {name = "CVRL", id = "124244582950595"},
         {name = "Empina na onda", id = "104621031886653"},
-        {name = "TOMA LÃ DA CÃ", id = "71590664026646"},
+        {name = "TOMA LÃƒÂ DA CÃƒÂ", id = "71590664026646"},
         {name = "fuga na viatura", id = "131891110268352"},
         {name = "funkphonk fumando verde", id = "112143944982807"},
-        {name = "moÃ§a sai da sacada.", id = "6093993662"},
+        {name = "moÃƒÂ§a sai da sacada.", id = "6093993662"},
         {name = "pre treino", id = "136869502216760"},
         {name = "batida Brega Violino (Beat Brega Funk)", id = "99399643204701"},
-        {name = "DanÃ§a do Canguru (Pke Gaz1nh)", id = "86876136192157"},
+        {name = "DanÃƒÂ§a do Canguru (Pke Gaz1nh)", id = "86876136192157"},
         {name = "MONTAGEM ARABIANA (Pke Gaz1nh)", id = "78076624091098"},
         {name = "Manda o papo (NGI)", id = "132642647937688"},
         {name = "Viver bem", id = "82805460494325"},
@@ -2574,8 +2574,8 @@ createMusicDropdown("Phonk", {
         {name = "phonk sarra", id = "132436320685732"},
         {name = "relaionamento sem crush", id = "105832154444494"},
         {name = "phonk3", id = "90323407842935"},
-        {name = "novinha danÃ§apanpa", id = "132245626038510"},
-        {name = "phonk sexoagreÃ§ivo", id = "111995323199676"},
+        {name = "novinha danÃƒÂ§apanpa", id = "132245626038510"},
+        {name = "phonk sexoagreÃƒÂ§ivo", id = "111995323199676"},
         {name = "phonk4", id = "115016589376700"},
         {name = "phonk5", id = "118740708757685"},
         {name = "phonk6", id = "139435437308948"},
@@ -2635,9 +2635,9 @@ createMusicDropdown("Phonk", {
         {name = "MONTAGEM TERRA BELA FUNK", id = "134770548505933"},
         {name = "FUNK DO RAVE 1.0", id = "137135395010424"},
         {name = " Portao Funk", id = "70900514961735"},
-        {name = " EspaÃ§o Funk", id = "110519906029322"},
+        {name = " EspaÃƒÂ§o Funk", id = "110519906029322"},
         {name = " FUTABA", id = "91834632690710"},
-        {name = " MelÃ³dica ExplosÃ£o De Melodia", id = "98371771055411"},
+        {name = " MelÃƒÂ³dica ExplosÃƒÂ£o De Melodia", id = "98371771055411"},
         {name = " RASGO", id = "98267810117949"},
         {name = " HIPNOTIZA", id = "117668905142866"},
         {name = "CRISTAL NOTURNO", id = "103695219371872"},
@@ -2657,7 +2657,7 @@ createMusicDropdown("Phonk", {
         {name = "KOBALT", id = "79381341943021"},
         {name = " andante bacterial", id = "105882833374061"},
         {name = "ANGEL Speed Up", id = "139593870988593"},
-        {name = "LUTA Ã‰PICA", id = "73966367524216"},
+        {name = "LUTA Ãƒâ€°PICA", id = "73966367524216"},
         {name = "MALDITA", id = "133814632960968"},
         {name = "HIPNOTIZA", id = "132015050363205"},
         {name = "MIDZUKI speed up", id = "129151948619922"},
@@ -2667,7 +2667,7 @@ createMusicDropdown("Phonk", {
 }, "Option 1")
 
 Tab8:AddButton({
-    Name = "Parar mÃºsicas",
+    Name = "Parar mÃƒÂºsicas",
     Description = "ALL music",
     Callback = function()
         tocarMusica("")
@@ -2708,7 +2708,7 @@ SetNetworkOwnerEvent.Parent = ReplicatedStorage
 
 local serverScriptCode = [[
     local ReplicatedStorage = game:GetService("ReplicatedStorage")
-    local event = ReplicatedStorage:WaitForChild("]] .. SetNetworkOwnerEvent.Name .. [[")
+    local event = ReplicatedStorage:WaitForChild("]] .. SetNetworkOwnerEvent.Nama .. [[")
     
     event.OnServerEvent:Connect(function(player, part, networkOwner)
         if part and part:IsA("BasePart") then
@@ -2728,7 +2728,7 @@ end)
 
 local function disableCarClient()
     local backpack = LocalPlayer:WaitForChild("Backpack")
-    local carClient = backpack:FindFirstChild("CarClient")
+    local carClient = backpack:FindFirstChild("MobilClient")
     if carClient and carClient:IsA("LocalScript") then
         carClient.Disabled = true
     end
@@ -2736,7 +2736,7 @@ end
 
 local function enableCarClient()
     local backpack = LocalPlayer:WaitForChild("Backpack")
-    local carClient = backpack:FindFirstChild("CarClient")
+    local carClient = backpack:FindFirstChild("MobilClient")
     if carClient and carClient:IsA("LocalScript") then
         carClient.Disabled = false
     end
@@ -2775,7 +2775,7 @@ local function updateDropdown(dropdown, spectateToggle)
                 if flingToggle then pcall(function() flingToggle:Set(false) end) end
             end
         elseif currentValue and table.find(playerNames, currentValue) then
-            dropdown:Set(currentValue) -- MantÃ©m seleÃ§Ã£o se jogador ainda estÃ¡ no jogo
+            dropdown:Set(currentValue) -- MantÃƒÂ©m seleÃƒÂ§ÃƒÂ£o se jogador ainda estÃƒÂ¡ no jogo
         end
     end)
 end
@@ -2845,18 +2845,18 @@ local function stopSpectating()
     end
 end
 
--- FunÃ§Ã£o para teletransportar para o jogador selecionado (com ancoragem segura)
+-- FunÃƒÂ§ÃƒÂ£o para teletransportar para o jogador selecionado (com ancoragem segura)
 local function teleportToPlayer(playerName)
     local targetPlayer = Players:FindFirstChild(playerName)
     if targetPlayer and LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and targetPlayer.Character and targetPlayer.Character:FindFirstChild("HumanoidRootPart") then
         local myHRP = LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
         local myHumanoid = LocalPlayer.Character:FindFirstChild("Humanoid")
         if not myHRP or not myHumanoid then
-            print("Seu personagem nÃ£o estÃ¡ totalmente carregado para teletransporte.")
+            print("Seu personagem nÃƒÂ£o estÃƒÂ¡ totalmente carregado para teletransporte.")
             return
         end
 
-        -- Zerar a fÃ­sica do personagem antes do teleporte
+        -- Zerar a fÃƒÂ­sica do personagem antes do teleporte
         for _, part in ipairs(LocalPlayer.Character:GetDescendants()) do
             if part:IsA("BasePart") then
                 part.Velocity = Vector3.zero
@@ -2865,9 +2865,9 @@ local function teleportToPlayer(playerName)
             end
         end
 
-        -- Teleportar para a posiÃ§Ã£o do jogador-alvo
+        -- Teleportar para a posiÃƒÂ§ÃƒÂ£o do jogador-alvo
         local success, errorMessage = pcall(function()
-            myHRP.CFrame = CFrame.new(targetPlayer.Character.HumanoidRootPart.Position + Vector3.new(0, 2, 0)) -- Leve elevaÃ§Ã£o para evitar colisÃ£o com o chÃ£o
+            myHRP.CFrame = CFrame.new(targetPlayer.Character.HumanoidRootPart.Position + Vector3.new(0, 2, 0)) -- Leve elevaÃƒÂ§ÃƒÂ£o para evitar colisÃƒÂ£o com o chÃƒÂ£o
         end)
         if not success then
             warn("Erro ao teletransportar: " .. tostring(errorMessage))
@@ -2881,7 +2881,7 @@ local function teleportToPlayer(playerName)
         -- Aguardar 0,5 segundos com o personagem ancorado
         task.wait(0.5)
 
-        -- Desancorar todas as partes do personagem e restaurar fÃ­sica
+        -- Desancorar todas as partes do personagem e restaurar fÃƒÂ­sica
         for _, part in ipairs(LocalPlayer.Character:GetDescendants()) do
             if part:IsA("BasePart") then
                 part.Anchored = false
@@ -2892,7 +2892,7 @@ local function teleportToPlayer(playerName)
 
         print("Teletransportado para o jogador: " .. playerName .. " com ancoragem segura.")
     else
-        print("Jogador ou personagem nÃ£o encontrado para teletransporte.")
+        print("Jogador ou personagem nÃƒÂ£o encontrado para teletransporte.")
     end
 end
 
@@ -2906,7 +2906,7 @@ end)
 local valor_do_nome_do_joagdor
 
 local DropdownPlayerTab2 = Tab9:AddDropdown({
-    Name = "Selecionar Jogador",
+    Name = "Pilih Jogador",
     Description = "Escolha um jogador para matar, puxar, visualizar ou aplicar fling",
     Default = "",
     Multi = false,
@@ -2945,7 +2945,7 @@ function UptadePlayers()
     DropdownPlayerTab2:Set(playerNames)
 end
 
-Tab9:AddButton({"Atualizar lista", function()
+Tab9:AddButton({"Perbarui lista", function()
     UptadePlayers()
 end})
 
@@ -2970,7 +2970,7 @@ Tab9:AddButton({
 
 local SpectateToggleTab10 = Tab9:AddToggle({
     Name = "Visualizar Jogador",
-    Description = "Ativa/desativa a visualizaÃ§Ã£o do jogador selecionado",
+    Description = "Ativa/desativa a visualizaÃƒÂ§ÃƒÂ£o do jogador selecionado",
     Default = false,
     Callback = function(state)
         if state then
@@ -2985,7 +2985,7 @@ local SpectateToggleTab10 = Tab9:AddToggle({
     end
 })
 
--- RemoÃ§Ã£o automÃ¡tica de jogadores que saem
+-- RemoÃƒÂ§ÃƒÂ£o automÃƒÂ¡tica de jogadores que saem
 Players.PlayerRemoving:Connect(function(player)
     updateDropdown(DropdownPlayerTab2, SpectateToggleTab10)
     if selectedPlayer == player then
@@ -3002,7 +3002,7 @@ Players.PlayerRemoving:Connect(function(player)
     end
 end)
 
--- AtualizaÃ§Ã£o automÃ¡tica quando um novo jogador entra
+-- AtualizaÃƒÂ§ÃƒÂ£o automÃƒÂ¡tica quando um novo jogador entra
 Players.PlayerAdded:Connect(function()
     task.wait(1) -- pequeno delay para garantir que o jogador esteja pronto
     updateDropdown(DropdownPlayerTab2, SpectateToggleTab10)
@@ -3015,9 +3015,9 @@ updateDropdown(DropdownPlayerTab2, SpectateToggleTab10)
 local Section = Tab9:AddSection({"Kill"})
 
 local DropdownKillPullMethod = Tab9:AddDropdown({
-    Name = "Selecionar MÃ©todo (Matar/Puxar)",
-    Description = "Escolha o mÃ©todo para matar ou puxar",
-    Options = {"SofÃ¡", "Ã”nibus"},
+    Name = "Pilih MÃƒÂ©todo (Matar/Puxar)",
+    Description = "Escolha o mÃƒÂ©todo para matar ou puxar",
+    Options = {"SofÃƒÂ¡", "Ãƒâ€nibus"},
     Callback = function(value)
         selectedKillPullMethod = value
     end
@@ -3091,14 +3091,14 @@ local function killWithBus(targetPlayer)
     pcall(function()
         ReplicatedStorage:WaitForChild("RE"):WaitForChild("1Ca1r"):FireServer(unpack(args))
     end)
-    args = { [1] = "PickingCar", [2] = "SchoolBus" }
+    args = { [1] = "PickingMobil", [2] = "SchoolBus" }
     pcall(function()
         ReplicatedStorage:WaitForChild("RE"):WaitForChild("1Ca1r"):FireServer(unpack(args))
     end)
     task.wait(1)
     local vehiclesFolder = Workspace:FindFirstChild("Vehicles")
     if not vehiclesFolder then return end
-    local busName = LocalPlayer.Name .. "Car"
+    local busName = LocalPlayer.Name .. "Mobil"
     local bus = vehiclesFolder:FindFirstChild(busName)
     if not bus then return end
     pcall(function()
@@ -3264,13 +3264,13 @@ end)
 
 Tab9:AddButton({
     Name = "Matar",
-    Description = "Inicia o matar com o mÃ©todo selecionado",
+    Description = "Inicia o matar com o mÃƒÂ©todo selecionado",
     Callback = function()
         if isFollowingKill or isFollowingPull or running then return end
         if not selectedPlayer or not selectedKillPullMethod then return end
-        if selectedKillPullMethod == "SofÃ¡" then
+        if selectedKillPullMethod == "SofÃƒÂ¡" then
             killWithSofa(selectedPlayer)
-        elseif selectedKillPullMethod == "Ã”nibus" then
+        elseif selectedKillPullMethod == "Ãƒâ€nibus" then
             killWithBus(selectedPlayer)
         end
     end
@@ -3278,10 +3278,10 @@ Tab9:AddButton({
 
 Tab9:AddButton({
     Name = "Puxar",
-    Description = "Inicia o puxar com o mÃ©todo selecionado",
+    Description = "Inicia o puxar com o mÃƒÂ©todo selecionado",
     Callback = function()
         if isFollowingKill or isFollowingPull or running then return end
-        if not selectedPlayer or not selectedKillPullMethod or selectedKillPullMethod ~= "SofÃ¡" then return end
+        if not selectedPlayer or not selectedKillPullMethod or selectedKillPullMethod ~= "SofÃƒÂ¡" then return end
         pullWithSofa(selectedPlayer)
     end
 })
@@ -3330,9 +3330,9 @@ Tab9:AddButton({
 local Section = Tab9:AddSection({" flings"})
 
 local DropdownFlingMethod = Tab9:AddDropdown({
-    Name = "Selecionar MÃ©todo de Fling",
-    Description = "Escolha o mÃ©todo para aplicar fling",
-    Options = {"SofÃ¡", "Ã”nibus", "Bola", "Bola V2", "Barco", "CaminhÃ£o"},
+    Name = "Pilih MÃƒÂ©todo de Fling",
+    Description = "Escolha o mÃƒÂ©todo para aplicar fling",
+    Options = {"SofÃƒÂ¡", "Ãƒâ€nibus", "Bola", "Bola V2", "Barco", "CaminhÃƒÂ£o"},
     Callback = function(value)
         selectedFlingMethod = value
     end
@@ -3681,7 +3681,7 @@ end
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------
-                                                   --fling com Ã´nibus--
+                                                   --fling com ÃƒÂ´nibus--
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -3709,14 +3709,14 @@ local function flingWithBus(targetPlayer)
     pcall(function()
         ReplicatedStorage:WaitForChild("RE"):WaitForChild("1Ca1r"):FireServer(unpack(args))
     end)
-    args = { [1] = "PickingCar", [2] = "SchoolBus" }
+    args = { [1] = "PickingMobil", [2] = "SchoolBus" }
     pcall(function()
         ReplicatedStorage:WaitForChild("RE"):WaitForChild("1Ca1r"):FireServer(unpack(args))
     end)
     task.wait(1)
     local vehiclesFolder = Workspace:FindFirstChild("Vehicles")
     if not vehiclesFolder then return end
-    local busName = LocalPlayer.Name .. "Car"
+    local busName = LocalPlayer.Name .. "Mobil"
     local bus = vehiclesFolder:FindFirstChild(busName)
     if not bus then return end
     pcall(function()
@@ -3850,7 +3850,7 @@ local function flingWithBoat(targetPlayer)
     task.wait(1.5)
     local vehiclesFolder = Workspace:FindFirstChild("Vehicles")
     if not vehiclesFolder then return end
-    local boatName = LocalPlayer.Name .. "Car"
+    local boatName = LocalPlayer.Name .. "Mobil"
     local boat = vehiclesFolder:FindFirstChild(boatName)
     if not boat then return end
     pcall(function()
@@ -3962,7 +3962,7 @@ end
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
-                                      --fling com caminhÃ£o--
+                                      --fling com caminhÃƒÂ£o--
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -3974,7 +3974,7 @@ local function flingWithTruck(targetPlayer)
     if not humanoid or not myHRP then return end
     savedPosition = myHRP.Position
 
-    -- Teletransporta para a posiÃ§Ã£o inicial do Ã´nibus para invocar o caminhÃ£o
+    -- Teletransporta para a posiÃƒÂ§ÃƒÂ£o inicial do ÃƒÂ´nibus para invocar o caminhÃƒÂ£o
     pcall(function()
         myHRP.Anchored = true
         myHRP.CFrame = CFrame.new(Vector3.new(1181.83, 76.08, -1158.83))
@@ -3986,30 +3986,30 @@ local function flingWithTruck(targetPlayer)
     end)
     task.wait(0.5)
 
-    -- Desativa o cliente de carro para evitar interferÃªncias
+    -- Desativa o cliente de carro para evitar interferÃƒÂªncias
     disableCarClient()
 
-    -- Deleta qualquer veÃ­culo existente
+    -- Deleta qualquer veÃƒÂ­culo existente
     local args = { [1] = "DeleteAllVehicles" }
     pcall(function()
         ReplicatedStorage:WaitForChild("RE"):WaitForChild("1Ca1r"):FireServer(unpack(args))
     end)
 
-    -- Invoca o caminhÃ£o (Semi) usando o comando fornecido
-    args = { [1] = "PickingCar", [2] = "Semi" }
+    -- Invoca o caminhÃƒÂ£o (Semi) usando o comando fornecido
+    args = { [1] = "PickingMobil", [2] = "Semi" }
     pcall(function()
         ReplicatedStorage:WaitForChild("RE"):WaitForChild("1Ca1r"):FireServer(unpack(args))
     end)
     task.wait(1)
 
-    -- Encontra o caminhÃ£o invocado
+    -- Encontra o caminhÃƒÂ£o invocado
     local vehiclesFolder = Workspace:FindFirstChild("Vehicles")
     if not vehiclesFolder then return end
-    local truckName = LocalPlayer.Name .. "Car"
+    local truckName = LocalPlayer.Name .. "Mobil"
     local truck = vehiclesFolder:FindFirstChild(truckName)
     if not truck then return end
 
-    -- Teletransporta para a posiÃ§Ã£o do assento do caminhÃ£o
+    -- Teletransporta para a posiÃƒÂ§ÃƒÂ£o do assento do caminhÃƒÂ£o
     pcall(function()
         myHRP.Anchored = true
         myHRP.CFrame = CFrame.new(Vector3.new(1176.56, 79.90, -1166.65))
@@ -4020,14 +4020,14 @@ local function flingWithTruck(targetPlayer)
         humanoid:ChangeState(Enum.HumanoidStateType.Seated)
     end)
 
-    -- Espera o jogador sentar no caminhÃ£o
+    -- Espera o jogador sentar no caminhÃƒÂ£o
     local sitStart = tick()
     repeat
         task.wait()
         if tick() - sitStart > 10 then return end
     until humanoid.Sit
 
-    -- Desativa a colisÃ£o das partes do caminhÃ£o e define a posse de rede
+    -- Desativa a colisÃƒÂ£o das partes do caminhÃƒÂ£o e define a posse de rede
     for _, part in ipairs(truck:GetDescendants()) do
         if part:IsA("BasePart") then
             part.CanCollide = false
@@ -4059,13 +4059,13 @@ local function flingWithTruck(targetPlayer)
         if not trailer then return end
 
         -- Faz o trailer se mover para cima e para baixo muito rapidamente
-        local verticalOffset = math.sin(tick() * 30) * 5 -- Oscila entre -5 e 5 unidades na vertical, ainda mais rÃ¡pido
+        local verticalOffset = math.sin(tick() * 30) * 5 -- Oscila entre -5 e 5 unidades na vertical, ainda mais rÃƒÂ¡pido
         pcall(function()
             local targetPosition = newTargetHRP.Position + Vector3.new(0, verticalOffset, 0)
-            trailer:PivotTo(CFrame.new(targetPosition)) -- Apenas movimento vertical, sem rotaÃ§Ã£o
+            trailer:PivotTo(CFrame.new(targetPosition)) -- Apenas movimento vertical, sem rotaÃƒÂ§ÃƒÂ£o
         end)
 
-        -- Verifica a distÃ¢ncia entre o trailer e o jogador-alvo para aplicar o fling
+        -- Verifica a distÃƒÂ¢ncia entre o trailer e o jogador-alvo para aplicar o fling
         local dist = (trailer.Position - newTargetHRP.Position).Magnitude
         if dist < 5 and tick() - lastFlingTime > 0.4 then -- Aplica o fling se o jogador estiver a menos de 5 unidades
             lastFlingTime = tick()
@@ -4085,7 +4085,7 @@ local function flingWithTruck(targetPlayer)
             end)
         end
 
-        -- Para o fling se o jogador-alvo estiver sentado ou apÃ³s 10 segundos
+        -- Para o fling se o jogador-alvo estiver sentado ou apÃƒÂ³s 10 segundos
         local playerSeated = false
         for _, seat in ipairs(truck:GetDescendants()) do
             if (seat:IsA("Seat") or seat:IsA("VehicleSeat")) and seat.Name ~= "VehicleSeat" then
@@ -4101,13 +4101,13 @@ local function flingWithTruck(targetPlayer)
             if connection then connection:Disconnect() connection = nil end
             if flingConnection then flingConnection:Disconnect() flingConnection = nil end
 
-            -- Teletransporta o caminhÃ£o para uma posiÃ§Ã£o fora do mapa
+            -- Teletransporta o caminhÃƒÂ£o para uma posiÃƒÂ§ÃƒÂ£o fora do mapa
             pcall(function()
                 truck:PivotTo(CFrame.new(Vector3.new(-59599.73, 2040070.50, -293391.16)))
             end)
             task.wait(0.5)
 
-            -- Limpeza: Deleta o caminhÃ£o e reseta o jogador
+            -- Limpeza: Deleta o caminhÃƒÂ£o e reseta o jogador
             disableCarClient()
             local args = { [1] = "DeleteAllVehicles" }
             pcall(function()
@@ -4227,7 +4227,7 @@ end
                 
 flingToggle = Tab9:AddToggle({
     Name = "Ativar Fling",
-    Description = "Ativa ou desativa o fling com o mÃ©todo selecionado",
+    Description = "Ativa ou desativa o fling com o mÃƒÂ©todo selecionado",
     Default = false,
     Callback = function(state)
         if state then
@@ -4235,7 +4235,7 @@ flingToggle = Tab9:AddToggle({
                 flingToggle:Set(false)
                 return
             end
-            if selectedFlingMethod == "SofÃ¡" then
+            if selectedFlingMethod == "SofÃƒÂ¡" then
                 flingWithSofa(selectedPlayer)
             elseif selectedFlingMethod == "Bola" then
                 flingWithBall(selectedPlayer)
@@ -4243,9 +4243,9 @@ flingToggle = Tab9:AddToggle({
                 flingWithBallV2(selectedPlayer)
             elseif selectedFlingMethod == "Barco" then
                 flingWithBoat(selectedPlayer)
-            elseif selectedFlingMethod == "CaminhÃ£o" then
+            elseif selectedFlingMethod == "CaminhÃƒÂ£o" then
                 flingWithTruck(selectedPlayer)
-            elseif selectedFlingMethod == "Ã”nibus" then
+            elseif selectedFlingMethod == "Ãƒâ€nibus" then
                 flingWithBus(selectedPlayer)
             end
         else
@@ -4271,7 +4271,7 @@ Tab9:AddToggle({
 
         if state then
             -- ==============================
-            -- INÃCIO DO LOOP DE ATAQUE
+            -- INÃƒÂCIO DO LOOP DE ATAQUE
             -- ==============================
             _G.BugAllAtivo = true
 
@@ -4333,7 +4333,7 @@ Tab9:AddToggle({
                 end
             end
 
-            -- Loop contÃ­nuo enquanto o toggle estiver ativo
+            -- Loop contÃƒÂ­nuo enquanto o toggle estiver ativo
             task.spawn(function()
                 while _G.BugAllAtivo do
                     clearAllTools()
@@ -4353,7 +4353,7 @@ Tab9:AddToggle({
     end
 })
 
-local kill = Tab9:AddSection({Name = "Click MÃ©todos (vocÃªs pediram)"})
+local kill = Tab9:AddSection({Name = "Click MÃƒÂ©todos (vocÃƒÂªs pediram)"})
 
 Tab9:AddButton({
   Name = "Click Fling door (atualizado)",
@@ -4368,7 +4368,7 @@ local LocalPlayer = Players.LocalPlayer
 local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
 local HRP = Character:WaitForChild("HumanoidRootPart")
 
--- Alvo invisÃ­vel (BlackHole)
+-- Alvo invisÃƒÂ­vel (BlackHole)
 local BlackHole = Instance.new("Part")
 BlackHole.Size = Vector3.new(100000, 100000, 100000)
 BlackHole.Transparency = 1
@@ -4382,7 +4382,7 @@ local baseAttachment = Instance.new("Attachment")
 baseAttachment.Name = "Luscaa_BlackHoleAttachment"
 baseAttachment.Parent = BlackHole
 
--- Atualiza posiÃ§Ã£o do BlackHole
+-- Atualiza posiÃƒÂ§ÃƒÂ£o do BlackHole
 RunService.Heartbeat:Connect(function()
 	BlackHole.CFrame = HRP.CFrame
 end)
@@ -4635,7 +4635,7 @@ end
 
 local Section = Tab9:AddSection({" fling ALL e desligue os RGB antes de usar"})
 
--- VariÃ¡veis globais no inÃ­cio do Tab2
+-- VariÃƒÂ¡veis globais no inÃƒÂ­cio do Tab2
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 local Workspace = game:GetService("Workspace")
@@ -4654,9 +4654,9 @@ allFling2 = false
 allConn2 = nil
 soccerBall = nil
 originalProperties = nil
-excludedPlayers = {} -- Tabela para jogadores excluÃ­dos dos flings
+excludedPlayers = {} -- Tabela para jogadores excluÃƒÂ­dos dos flings
 
--- FunÃ§Ã£o auxiliar para obter a foto de perfil do jogador
+-- FunÃƒÂ§ÃƒÂ£o auxiliar para obter a foto de perfil do jogador
 local function getPlayerThumbnail(userId)
     local thumbType = Enum.ThumbnailType.HeadShot
     local thumbSize = Enum.ThumbnailSize.Size420x420
@@ -4671,7 +4671,7 @@ local function getPlayerThumbnail(userId)
     end
 end
 
--- FunÃ§Ã£o auxiliar para encontrar jogador por parte do nome
+-- FunÃƒÂ§ÃƒÂ£o auxiliar para encontrar jogador por parte do nome
 local function findPlayerByPartialName(partialName)
     partialName = partialName:lower()
     for _, plr in ipairs(Players:GetPlayers()) do
@@ -4682,7 +4682,7 @@ local function findPlayerByPartialName(partialName)
     return nil
 end
 
--- FunÃ§Ã£o para exibir notificaÃ§Ã£o
+-- FunÃƒÂ§ÃƒÂ£o para exibir notificaÃƒÂ§ÃƒÂ£o
 local function showNotification(title, description, icon)
     pcall(function()
         StarterGui:SetCore("SendNotification", {
@@ -4697,20 +4697,20 @@ end
 -- TextBox para excluir jogador
 Tab9:AddTextBox({
     Name = "adicionar jogador na whitelist",
-    Description = "Digite parte do nome do jogador",
+    Description = "Ketik parte do nome do jogador",
     PlaceholderText = "Ex.: rt para (player123)",
     Callback = function(Value)
         if Value == "" then
-            showNotification("Nenhuma AÃ§Ã£o", "Digite um nome para adicionar um jogador.", nil)
+            showNotification("Nenhuma AÃƒÂ§ÃƒÂ£o", "Ketik um nome para adicionar um jogador.", nil)
             return
         end
 
         local player = findPlayerByPartialName(Value)
         if player then
-            -- Verifica se o jogador jÃ¡ estÃ¡ excluÃ­do
+            -- Verifica se o jogador jÃƒÂ¡ estÃƒÂ¡ excluÃƒÂ­do
             for _, excluded in ipairs(excludedPlayers) do
                 if excluded == player then
-                    showNotification("Jogador JÃ¡ esta na whaitelist", "Jogador " .. player.Name .. " jÃ¡ foi adicionado.", getPlayerThumbnail(player.UserId))
+                    showNotification("Jogador JÃƒÂ¡ esta na whaitelist", "Jogador " .. player.Name .. " jÃƒÂ¡ foi adicionado.", getPlayerThumbnail(player.UserId))
                     return
                 end
             end
@@ -4718,26 +4718,26 @@ Tab9:AddTextBox({
             local thumbnail = getPlayerThumbnail(player.UserId)
             showNotification("Jogador adicionado", "Jogador " .. player.Name .. " foi removido dos flings.", thumbnail)
         else
-            showNotification("Jogador NÃ£o Encontrado", "Nenhum jogador encontrado com '" .. Value .. "'.", nil)
+            showNotification("Jogador NÃƒÂ£o Encontrado", "Nenhum jogador encontrado com '" .. Value .. "'.", nil)
         end
     end
 })
 
--- BotÃ£o para verificar jogadores excluÃ­dos
-Tab9:AddButton({"Verificar ExcluÃ­dos", function()
+-- BotÃƒÂ£o para verificar jogadores excluÃƒÂ­dos
+Tab9:AddButton({"Verificar ExcluÃƒÂ­dos", function()
     if #excludedPlayers == 0 then
-        showNotification("Nenhum na whaitelist", "Nenhum jogador estÃ¡ removido dos flings.", nil)
+        showNotification("Nenhum na whaitelist", "Nenhum jogador estÃƒÂ¡ removido dos flings.", nil)
         return
     end
     for i, player in ipairs(excludedPlayers) do
         local thumbnail = getPlayerThumbnail(player.UserId)
-        showNotification("Jogador adicionado " .. i, "Jogador " .. player.Name .. " estÃ¡ removido dos flings.", thumbnail)
-        task.wait(0.5) -- Pequeno atraso entre notificaÃ§Ãµes para evitar sobreposiÃ§Ã£o
+        showNotification("Jogador adicionado " .. i, "Jogador " .. player.Name .. " estÃƒÂ¡ removido dos flings.", thumbnail)
+        task.wait(0.5) -- Pequeno atraso entre notificaÃƒÂ§ÃƒÂµes para evitar sobreposiÃƒÂ§ÃƒÂ£o
     end
 end})
 
--- BotÃ£o para remover todos os jogadores excluÃ­dos
-Tab9:AddButton({"Remover ExcluÃ­dos", function()
+-- BotÃƒÂ£o para remover todos os jogadores excluÃƒÂ­dos
+Tab9:AddButton({"Remover ExcluÃƒÂ­dos", function()
     if #excludedPlayers == 0 then
         showNotification("Nenhum removido", "Nenhum jogador para remover da whaitelist.", nil)
         return
@@ -5038,7 +5038,7 @@ Tab9:AddButton({"Parar Tudo", function()
     end
     soccerBall = nil
     originalProperties = nil
-    showNotification("Tudo Parado", "Todas as funÃ§Ãµes foram desativadas.", nil)
+    showNotification("Tudo Parado", "Todas as funÃƒÂ§ÃƒÂµes foram desativadas.", nil)
 end})
 
 
@@ -5049,7 +5049,7 @@ end})
                                                    -- === Tab 10: attack server === --
 ---------------------------------------------------------------------------------------------------------------------------------
 
--- BotÃ£o para Giant Joust Red N4zi
+-- BotÃƒÂ£o para Giant Joust Red N4zi
 Tab10:AddButton({
     Name = "Giant Joust Red N4zi",
     Callback = function()
@@ -5116,7 +5116,7 @@ Tab10:AddButton({
                     toollllfoun2 = true
                     for basc, aijfw in pairs(toollel:GetDescendants()) do
                         if aijfw.Name == "Handle" then
-                            aijfw.Name = "HÃ¢ÂÂ¥aÃ¢ÂÂ¥nÃ¢ÂÂ¥dÃ¢ÂÂ¥lÃ¢ÂÂ¥e"
+                            aijfw.Name = "HÃƒÂ¢Ã‚ÂÃ‚Â¥aÃƒÂ¢Ã‚ÂÃ‚Â¥nÃƒÂ¢Ã‚ÂÃ‚Â¥dÃƒÂ¢Ã‚ÂÃ‚Â¥lÃƒÂ¢Ã‚ÂÃ‚Â¥e"
                             toollel.Parent = game.Players.LocalPlayer.Backpack
                             toollel.Parent = game.Players.LocalPlayer.Character
                             tollllahhhh = toollel
@@ -5137,7 +5137,7 @@ Tab10:AddButton({
                         if jjsjsj.Name == "Handle" then
                             toollll.Parent = game.Players.LocalPlayer.Character
                             wait()
-                            jjsjsj.Name = "HÃ¢ÂÂ¥aÃ¢ÂÂ¥nÃ¢ÂÂ¥dÃ¢ÂÂ¥lÃ¢ÂÂ¥e"
+                            jjsjsj.Name = "HÃƒÂ¢Ã‚ÂÃ‚Â¥aÃƒÂ¢Ã‚ÂÃ‚Â¥nÃƒÂ¢Ã‚ÂÃ‚Â¥dÃƒÂ¢Ã‚ÂÃ‚Â¥lÃƒÂ¢Ã‚ÂÃ‚Â¥e"
                             toollll.Parent = game.Players.LocalPlayer.Backpack
                             toollll.Parent = game.Players.LocalPlayer.Character
                             toolllffel = toollll
@@ -5197,7 +5197,7 @@ Tab10:AddButton({
             end
 
             wait()
-            game:GetService("Players").LocalPlayer.Character[toolselcted]:FindFirstChild("Handle").Name = "HÃ¢ÂÂ¥aÃ¢ÂÂ¥nÃ¢ÂÂ¥dÃ¢ÂÂ¥lÃ¢ÂÂ¥e"
+            game:GetService("Players").LocalPlayer.Character[toolselcted]:FindFirstChild("Handle").Name = "HÃƒÂ¢Ã‚ÂÃ‚Â¥aÃƒÂ¢Ã‚ÂÃ‚Â¥nÃƒÂ¢Ã‚ÂÃ‚Â¥dÃƒÂ¢Ã‚ÂÃ‚Â¥lÃƒÂ¢Ã‚ÂÃ‚Â¥e"
             game:GetService("Players").LocalPlayer.Character:FindFirstChild(toolselcted).Parent = game.Players.LocalPlayer.Backpack
             game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(toolselcted).Parent = game.Players.LocalPlayer.Character
 
@@ -5286,14 +5286,14 @@ Tab10:AddButton({
 
         for i, tool in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
             if tool:IsA("Tool") then
-                -- Przeniesienie narzÃ„â„¢dzia do postaci gracza
+                -- Przeniesienie narzÃƒâ€žÃ¢â€žÂ¢dzia do postaci gracza
                 tool.Parent = game.Players.LocalPlayer.Character
 
                 -- Ustalanie indeksu pozycji chwytu
                 local gripPosIndex = math.min(i, #TablaGripPos)
                 local gripPos = TablaGripPos[gripPosIndex]
 
-                -- Ustawienie pozycji chwytu (GripPos), jeÃ…â€ºli narzÃ„â„¢dzie jest w postaci gracza
+                -- Ustawienie pozycji chwytu (GripPos), jeÃƒâ€¦Ã¢â‚¬Âºli narzÃƒâ€žÃ¢â€žÂ¢dzie jest w postaci gracza
                 if tool:IsDescendantOf(game.Players.LocalPlayer.Character) then
                     tool.GripPos = gripPos
                 else
@@ -5331,7 +5331,7 @@ local function lagarJogoLaptop(laptopPath, maxTeleports)
             wait(0.0001)
         end
     else
-        warn("Laptop nÃ£o encontrado.")
+        warn("Laptop nÃƒÂ£o encontrado.")
     end
 end
 
@@ -5348,7 +5348,7 @@ Tab10:AddToggle({
                     lagarJogoLaptop(laptopPath, 999999999)
                 end)
             else
-                warn("Laptop nÃ£o encontrado.")
+                warn("Laptop nÃƒÂ£o encontrado.")
             end
         else
             print("Lag com Laptop desativado.")
@@ -5358,8 +5358,8 @@ Tab10:AddToggle({
 
 -- Lag Laptop Paragraph
 Tab10:AddParagraph({
-    "InformaÃ§Ã£o de Lag",
-    "O efeito de lag comeÃ§a apos 35 segundos"
+    "InformaÃƒÂ§ÃƒÂ£o de Lag",
+    "O efeito de lag comeÃƒÂ§a apos 35 segundos"
 })
 
 local Section = Tab10:AddSection({
@@ -5388,7 +5388,7 @@ Tab10:AddToggle({
                     if Bomb and RootPart then
                         RootPart.CFrame = Bomb.CFrame
                         fireclickdetector(Bomb.ClickDetector) -- Aciona o ClickDetector da bomba
-                        task.wait(0.00001) -- Delay mÃ­nimo para evitar travamentos
+                        task.wait(0.00001) -- Delay mÃƒÂ­nimo para evitar travamentos
                     else
                         task.wait(0.0001) 
                     end
@@ -5420,8 +5420,8 @@ Tab10:AddToggle({
 })
 
 Tab10:AddParagraph({
-    "InformaÃ§Ã£o de Lag",
-    "O script comeÃ§a a causar lag apos 35 segundos"
+    "InformaÃƒÂ§ÃƒÂ£o de Lag",
+    "O script comeÃƒÂ§a a causar lag apos 35 segundos"
 })
 
 Tab10:AddSection({ "(OP) Tornado" })
@@ -5479,7 +5479,7 @@ local function spawnBoat()
     task.wait(0.5)
     RS:WaitForChild("RE"):FindFirstChild("1Ca1r"):FireServer("PickingBoat", "PirateFree")
     task.wait(1)
-    return Vehicles:FindFirstChild(Player.Name .. "Car")
+    return Vehicles:FindFirstChild(Player.Name .. "Mobil")
 end
 
 local PCar = spawnBoat()
@@ -5567,19 +5567,19 @@ Tab10:AddButton({
     end
 })
 
-local Section = Tab10:AddSection({"ExpansÃ£o de domÃ­nio"})
+local Section = Tab10:AddSection({"ExpansÃƒÂ£o de domÃƒÂ­nio"})
 
 Tab10:AddButton({
-    Name = " ExpansÃ£o de domÃ­nioðŸŒŒ",
+    Name = " ExpansÃƒÂ£o de domÃƒÂ­nioÃ°Å¸Å’Å’",
     Callback = function()
-        -- ServiÃ§os
+        -- ServiÃƒÂ§os
         local TextChatService = game:GetService("TextChatService")
         local Lighting = game:GetService("Lighting")
         local Players = game:GetService("Players")
         local ReplicatedStorage = game:GetService("ReplicatedStorage")
         local Player = Players.LocalPlayer
 
-        -- VariÃ¡veis globais para controle
+        -- VariÃƒÂ¡veis globais para controle
         _G.DominioAtivo = true
         _G.AudioLoopAtivo = true
         _G.AtaqueArmaAtivo = true
@@ -5587,13 +5587,13 @@ Tab10:AddButton({
         -- Aviso no chat (com \r conforme seu pedido)
         if TextChatService.ChatVersion == Enum.ChatVersion.TextChatService then 
             TextChatService.TextChannels.RBXGeneral:SendAsync(
-                "Hi\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r ExpansÃ£o de DomÃ­nio ativada"
+                "Hi\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r ExpansÃƒÂ£o de DomÃƒÂ­nio ativada"
             )
         else 
             print("Ataque funcionando kkkkk")
         end
 
-        -- FunÃ§Ã£o para ativar ExpansÃ£o de DomÃ­nio
+        -- FunÃƒÂ§ÃƒÂ£o para ativar ExpansÃƒÂ£o de DomÃƒÂ­nio
         local function ativarDominio()
             local char = Player.Character or Player.CharacterAdded:Wait()
             local hrp = char:WaitForChild("HumanoidRootPart")
@@ -5651,10 +5651,10 @@ Tab10:AddButton({
             _G.DominioSky = newSky
         end
 
-        -- Executa a expansÃ£o de domÃ­nio
+        -- Executa a expansÃƒÂ£o de domÃƒÂ­nio
         ativarDominio()
 
-        -- Ãudio em loop infinito no jogador
+        -- ÃƒÂudio em loop infinito no jogador
         local selectedAudioID = 140031333626044
 
         task.spawn(function()
@@ -5675,7 +5675,7 @@ Tab10:AddButton({
                     sound.Ended:Connect(function() sound:Destroy() end)
                     task.wait(sound.TimeLength + 0.1)
                 else
-                    warn("HumanoidRootPart nÃ£o encontrado")
+                    warn("HumanoidRootPart nÃƒÂ£o encontrado")
                     break
                 end
             end
@@ -5753,7 +5753,7 @@ Tab10:AddButton({
             end
         end
 
-        -- Loop automÃ¡tico de ataque
+        -- Loop automÃƒÂ¡tico de ataque
         task.spawn(function()
             while _G.AtaqueArmaAtivo do
                 clearAllTools()
@@ -5773,7 +5773,7 @@ Tab10:AddButton({
 })
 
 Tab10:AddButton({
-    Name = "Cancelar ExpansÃ£o de DomÃ­nio",
+    Name = "Cancelar ExpansÃƒÂ£o de DomÃƒÂ­nio",
     Callback = function()
         local Lighting = game:GetService("Lighting")
         local workspace = game:GetService("Workspace")
@@ -5784,7 +5784,7 @@ Tab10:AddButton({
         _G.AudioLoopAtivo = false
         _G.AtaqueArmaAtivo = false
 
-        -- Remove o modelo de domÃ­nio
+        -- Remove o modelo de domÃƒÂ­nio
         if _G.DominioModel then
             _G.DominioModel:Destroy()
             _G.DominioModel = nil
@@ -5795,7 +5795,7 @@ Tab10:AddButton({
             end
         end
 
-        -- Para o som do domÃ­nio
+        -- Para o som do domÃƒÂ­nio
         if _G.DominioSound then
             _G.DominioSound:Stop()
             _G.DominioSound:Destroy()
@@ -5826,7 +5826,7 @@ Tab10:AddButton({
             end
         end
 
-        -- Cria sky padrÃ£o
+        -- Cria sky padrÃƒÂ£o
         local defaultSky = Instance.new("Sky")
         defaultSky.SkyboxBk = "rbxassetid://7018684000"
         defaultSky.SkyboxDn = "rbxassetid://7018684000"
@@ -5837,12 +5837,12 @@ Tab10:AddButton({
         defaultSky.Parent = Lighting
 
         -- Mensagem visual no Output
-        print("ExpansÃ£o de DomÃ­nio  cancelada com sucesso!")
+        print("ExpansÃƒÂ£o de DomÃƒÂ­nio  cancelada com sucesso!")
 
         -- Opcional: mensagem no chat
         local TextChatService = game:GetService("TextChatService")
         if TextChatService.ChatVersion == Enum.ChatVersion.TextChatService then
-            TextChatService.TextChannels.RBXGeneral:SendAsync("ExpansÃ£o de DomÃ­nio  foi cancelada!")
+            TextChatService.TextChannels.RBXGeneral:SendAsync("ExpansÃƒÂ£o de DomÃƒÂ­nio  foi cancelada!")
         end
     end
 })
@@ -5850,16 +5850,16 @@ Tab10:AddButton({
 local Section = Tab10:AddSection({"Sharingan"})
 
 Tab10:AddButton({
-    Name = "Sharingan ðŸŒ€", 
+    Name = "Sharingan Ã°Å¸Å’â‚¬", 
     Callback = function()
-        -- ServiÃ§os
+        -- ServiÃƒÂ§os
         local TextChatService = game:GetService("TextChatService")
         local Lighting = game:GetService("Lighting")
         local Players = game:GetService("Players")
         local ReplicatedStorage = game:GetService("ReplicatedStorage")
         local Player = Players.LocalPlayer
         
-        -- VariÃ¡vel global para controlar o loop
+        -- VariÃƒÂ¡vel global para controlar o loop
         _G.SharinganActive = true
 
         -- Aviso no chat
@@ -5871,7 +5871,7 @@ Tab10:AddButton({
             print("naruto chorou no banho F")
         end
 
-        -- FunÃ§Ã£o para ativar ExpansÃ£o de DomÃ­nio
+        -- FunÃƒÂ§ÃƒÂ£o para ativar ExpansÃƒÂ£o de DomÃƒÂ­nio
         local function ativarDominio()
             local char = Player.Character or Player.CharacterAdded:Wait()
             local hrp = char:WaitForChild("HumanoidRootPart")
@@ -5926,10 +5926,10 @@ Tab10:AddButton({
             newSky.SkyboxUp = "rbxassetid://159454288"
         end
 
-        -- Executa a expansÃ£o de domÃ­nio
+        -- Executa a expansÃƒÂ£o de domÃƒÂ­nio
         ativarDominio()
 
-        -- Ãudio em loop infinito no jogador
+        -- ÃƒÂudio em loop infinito no jogador
         local selectedAudioID = 405593386
 
         task.spawn(function()
@@ -5950,7 +5950,7 @@ Tab10:AddButton({
                     sound.Ended:Connect(function() sound:Destroy() end)
                     task.wait(sound.TimeLength + 0.1)
                 else
-                    warn("HumanoidRootPart nÃ£o encontrado")
+                    warn("HumanoidRootPart nÃƒÂ£o encontrado")
                     task.wait(1)
                 end
             end
@@ -6028,7 +6028,7 @@ Tab10:AddButton({
             end
         end
 
-        -- Loop automÃ¡tico de ataque
+        -- Loop automÃƒÂ¡tico de ataque
         task.spawn(function()
             while _G.SharinganActive do
                 clearAllTools()
@@ -6050,7 +6050,7 @@ Tab10:AddButton({
 Tab10:AddButton({
     Name = "Cancelar Sharingan ",
     Callback = function()
-        -- ServiÃ§os
+        -- ServiÃƒÂ§os
         local Lighting = game:GetService("Lighting")
         local Players = game:GetService("Players")
         local workspace = game:GetService("Workspace")
@@ -6066,7 +6066,7 @@ Tab10:AddButton({
             dominio:Destroy()
         end
 
-        -- Remove sons e partÃ­culas criadas dentro do personagem
+        -- Remove sons e partÃƒÂ­culas criadas dentro do personagem
         if Player.Character then
             for _, obj in ipairs(Player.Character:GetDescendants()) do
                 if obj:IsA("Sound") or obj:IsA("ParticleEmitter") then
@@ -6082,7 +6082,7 @@ Tab10:AddButton({
             end
         end
 
-        -- Remove partÃ­culas da workspace
+        -- Remove partÃƒÂ­culas da workspace
         for _, obj in ipairs(workspace:GetDescendants()) do
             if obj:IsA("ParticleEmitter") then
                 obj:Destroy()
@@ -6096,7 +6096,7 @@ Tab10:AddButton({
             end
         end
 
-        -- Restaura um cÃ©u padrÃ£o
+        -- Restaura um cÃƒÂ©u padrÃƒÂ£o
         local defaultSky = Instance.new("Sky")
         defaultSky.SkyboxBk = "rbxassetid://7018684000"
         defaultSky.SkyboxDn = "rbxassetid://7018684000"
@@ -6130,7 +6130,7 @@ Tab10:AddButton({
 
 local Section = Tab10:AddSection({"Skybox FE"})
 
--- VariÃ¡veis para controlar os estados
+-- VariÃƒÂ¡veis para controlar os estados
 local SkyboxActive = false
 local CurrentTrack = nil
 local RigidTrack = nil
@@ -6139,7 +6139,7 @@ Tab10:AddButton({
    Name = "Skybox FE",
    Callback = function()
         if SkyboxActive then
-            -- Desativa skybox e animaÃ§Ãµes
+            -- Desativa skybox e animaÃƒÂ§ÃƒÂµes
             if CurrentTrack then
                 CurrentTrack:Stop(0.1)
                 CurrentTrack = nil
@@ -6149,10 +6149,10 @@ Tab10:AddButton({
                 RigidTrack = nil
             end
             
-            -- Primeiro reseta a aparÃªncia
+            -- Primeiro reseta a aparÃƒÂªncia
             game:GetService("ReplicatedStorage").Remotes.ResetCharacterAppearance:FireServer()
             
-            -- Aguarda um pouco e entÃ£o mata o personagem
+            -- Aguarda um pouco e entÃƒÂ£o mata o personagem
             task.wait(0.3)
             
             local Players = game:GetService("Players")
@@ -6194,7 +6194,7 @@ Tab10:AddButton({
             local character = player.Character or player.CharacterAdded:Wait()
             local humanoid = character:WaitForChild("Humanoid")
 
-            -- ConfiguraÃ§Ãµes da skybox
+            -- ConfiguraÃƒÂ§ÃƒÂµes da skybox
             local Settings = {}
             Settings["Fade In"]     = 0.1
             Settings["Fade Out"]    = 0.1
@@ -6235,14 +6235,14 @@ Tab10:AddButton({
                 return newTrack
             end
 
-            -- Executa a animaÃ§Ã£o da skybox
+            -- Executa a animaÃƒÂ§ÃƒÂ£o da skybox
             local EmoteId = 101852027997337
             LoadTrack(EmoteId)
             
             -- Aguarda um pouco antes de ativar o planking
             task.wait(0.5)
             
-            -- Ativa a animaÃ§Ã£o de planking (andar duro/deitado)
+            -- Ativa a animaÃƒÂ§ÃƒÂ£o de planking (andar duro/deitado)
             local PlankingId = "rbxassetid://3695333486"
             local plankAnim = Instance.new("Animation")
             plankAnim.AnimationId = PlankingId
@@ -6256,7 +6256,7 @@ Tab10:AddButton({
     end
 })
 
--- BotÃ£o de reset completo
+-- BotÃƒÂ£o de reset completo
 Tab10:AddButton({
     Name = "Para Skybox",
     Callback = function()
@@ -6270,7 +6270,7 @@ Tab10:AddButton({
         end
         SkyboxActive = false
         
-        -- Primeiro reseta a aparÃªncia
+        -- Primeiro reseta a aparÃƒÂªncia
         game:GetService("ReplicatedStorage").Remotes.ResetCharacterAppearance:FireServer()
         
         -- Aguarda um pouco para o remote processar
@@ -6287,11 +6287,11 @@ Tab10:AddButton({
             end
         end
         
-        print("AparÃªncia resetada e personagem morto!")
+        print("AparÃƒÂªncia resetada e personagem morto!")
     end
 })
 
--- DetecÃ§Ã£o automÃ¡tica de reset/morte do personagem
+-- DetecÃƒÂ§ÃƒÂ£o automÃƒÂ¡tica de reset/morte do personagem
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 
@@ -6324,7 +6324,7 @@ Tab11:AddButton({
     end
 })
 
--- BotÃ£o para TP Tool
+-- BotÃƒÂ£o para TP Tool
 Tab11:AddButton({
     Name = "TP Tool",
     Description = "Universal",
@@ -6333,7 +6333,7 @@ Tab11:AddButton({
     end
 })
 
--- BotÃ£o para Infinite Yield
+-- BotÃƒÂ£o para Infinite Yield
 Tab11:AddButton({
     Name = "InfiniteYield - Cmd",
     Description = "Universal",
@@ -6358,7 +6358,7 @@ Tab11:AddButton({
     end
 })
 
-local Section = Tab11:AddSection({"Scripts somente para Brookhaven"})
+local Section = Tab11:AddSection({"Script somente para Brookhaven"})
 
 Tab11:AddButton({
     Name = "System Brook",
@@ -6391,11 +6391,11 @@ Tab11:AddButton({
 -- Tab12: Teleportes
 
 local teleportPlayer = game.Players.LocalPlayer
-local teleportLocation = "Morro" -- Valor padrÃ£o
+local teleportLocation = "Morro" -- Valor padrÃƒÂ£o
 
 local locations = {
     ["Morro"] = Vector3.new(-348.64, 65.94, -458.08),
-    ["PraÃ§a"] = Vector3.new(-26.17, 3.48, -0.93),
+    ["PraÃƒÂ§a"] = Vector3.new(-26.17, 3.48, -0.93),
     ["Banco"] = Vector3.new(1.99, 3.32, 236.65),
     ["Hospital"] = Vector3.new(-303.2, 3.40, 13.74),
     ["Prefeitura"] = Vector3.new(-354.65, 7.32, -102.16),
@@ -6415,7 +6415,7 @@ Tab12:AddDropdown({
     Multi = false,
     Options = {
         "Morro",
-        "PraÃ§a",
+        "PraÃƒÂ§a",
         "Banco",
         "Hospital",
         "Prefeitura",
@@ -6463,7 +6463,7 @@ Tab12:AddButton({
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------
-                                          -- === Tab 6: ProteÃ§Ãµes === --
+                                          -- === Tab 6: ProteÃƒÂ§ÃƒÂµes === --
 -----------------------------------------------------------------------------------------------------------------------------------------
 
 Tab6:AddSection({
